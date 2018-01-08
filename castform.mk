@@ -1,4 +1,4 @@
-CASTFORMGFXDIR := graphics/pokemon/castform
+CASTFORMGFXDIR := graphics/pokemon/kotokabe
 
 $(CASTFORMGFXDIR)/back.4bpp: $(CASTFORMGFXDIR)/back_normal_form.4bpp \
                              $(CASTFORMGFXDIR)/back_sunny_form.4bpp \

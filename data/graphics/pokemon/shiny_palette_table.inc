@@ -1,444 +1,414 @@
-	.set PAL_ID_SHINY, 500
-
 	.align 2
-gMonShinyPaletteTable:: @ 81EB374
-	obj_pal gMonShinyPalette_CircledQuestionMark, PAL_ID_SHINY + SPECIES_NONE
-	obj_pal gMonShinyPalette_Bulbasaur, PAL_ID_SHINY + SPECIES_BULBASAUR
-	obj_pal gMonShinyPalette_Ivysaur, PAL_ID_SHINY + SPECIES_IVYSAUR
-	obj_pal gMonShinyPalette_Venusaur, PAL_ID_SHINY + SPECIES_VENUSAUR
-	obj_pal gMonShinyPalette_Charmander, PAL_ID_SHINY + SPECIES_CHARMANDER
-	obj_pal gMonShinyPalette_Charmeleon, PAL_ID_SHINY + SPECIES_CHARMELEON
-	obj_pal gMonShinyPalette_Charizard, PAL_ID_SHINY + SPECIES_CHARIZARD
-	obj_pal gMonShinyPalette_Squirtle, PAL_ID_SHINY + SPECIES_SQUIRTLE
-	obj_pal gMonShinyPalette_Wartortle, PAL_ID_SHINY + SPECIES_WARTORTLE
-	obj_pal gMonShinyPalette_Blastoise, PAL_ID_SHINY + SPECIES_BLASTOISE
-	obj_pal gMonShinyPalette_Caterpie, PAL_ID_SHINY + SPECIES_CATERPIE
-	obj_pal gMonShinyPalette_Metapod, PAL_ID_SHINY + SPECIES_METAPOD
-	obj_pal gMonShinyPalette_Butterfree, PAL_ID_SHINY + SPECIES_BUTTERFREE
-	obj_pal gMonShinyPalette_Weedle, PAL_ID_SHINY + SPECIES_WEEDLE
-	obj_pal gMonShinyPalette_Kakuna, PAL_ID_SHINY + SPECIES_KAKUNA
-	obj_pal gMonShinyPalette_Beedrill, PAL_ID_SHINY + SPECIES_BEEDRILL
-	obj_pal gMonShinyPalette_Pidgey, PAL_ID_SHINY + SPECIES_PIDGEY
-	obj_pal gMonShinyPalette_Pidgeotto, PAL_ID_SHINY + SPECIES_PIDGEOTTO
-	obj_pal gMonShinyPalette_Pidgeot, PAL_ID_SHINY + SPECIES_PIDGEOT
-	obj_pal gMonShinyPalette_Rattata, PAL_ID_SHINY + SPECIES_RATTATA
-	obj_pal gMonShinyPalette_Raticate, PAL_ID_SHINY + SPECIES_RATICATE
-	obj_pal gMonShinyPalette_Spearow, PAL_ID_SHINY + SPECIES_SPEAROW
-	obj_pal gMonShinyPalette_Fearow, PAL_ID_SHINY + SPECIES_FEAROW
-	obj_pal gMonShinyPalette_Ekans, PAL_ID_SHINY + SPECIES_EKANS
-	obj_pal gMonShinyPalette_Arbok, PAL_ID_SHINY + SPECIES_ARBOK
-	obj_pal gMonShinyPalette_Pikachu, PAL_ID_SHINY + SPECIES_PIKACHU
-	obj_pal gMonShinyPalette_Raichu, PAL_ID_SHINY + SPECIES_RAICHU
-	obj_pal gMonShinyPalette_Sandshrew, PAL_ID_SHINY + SPECIES_SANDSHREW
-	obj_pal gMonShinyPalette_Sandslash, PAL_ID_SHINY + SPECIES_SANDSLASH
-	obj_pal gMonShinyPalette_NidoranF, PAL_ID_SHINY + SPECIES_NIDORAN_F
-	obj_pal gMonShinyPalette_Nidorina, PAL_ID_SHINY + SPECIES_NIDORINA
-	obj_pal gMonShinyPalette_Nidoqueen, PAL_ID_SHINY + SPECIES_NIDOQUEEN
-	obj_pal gMonShinyPalette_NidoranM, PAL_ID_SHINY + SPECIES_NIDORAN_M
-	obj_pal gMonShinyPalette_Nidorino, PAL_ID_SHINY + SPECIES_NIDORINO
-	obj_pal gMonShinyPalette_Nidoking, PAL_ID_SHINY + SPECIES_NIDOKING
-	obj_pal gMonShinyPalette_Clefairy, PAL_ID_SHINY + SPECIES_CLEFAIRY
-	obj_pal gMonShinyPalette_Clefable, PAL_ID_SHINY + SPECIES_CLEFABLE
-	obj_pal gMonShinyPalette_Vulpix, PAL_ID_SHINY + SPECIES_VULPIX
-	obj_pal gMonShinyPalette_Ninetales, PAL_ID_SHINY + SPECIES_NINETALES
-	obj_pal gMonShinyPalette_Jigglypuff, PAL_ID_SHINY + SPECIES_JIGGLYPUFF
-	obj_pal gMonShinyPalette_Wigglytuff, PAL_ID_SHINY + SPECIES_WIGGLYTUFF
-	obj_pal gMonShinyPalette_Zubat, PAL_ID_SHINY + SPECIES_ZUBAT
-	obj_pal gMonShinyPalette_Golbat, PAL_ID_SHINY + SPECIES_GOLBAT
-	obj_pal gMonShinyPalette_Oddish, PAL_ID_SHINY + SPECIES_ODDISH
-	obj_pal gMonShinyPalette_Gloom, PAL_ID_SHINY + SPECIES_GLOOM
-	obj_pal gMonShinyPalette_Vileplume, PAL_ID_SHINY + SPECIES_VILEPLUME
-	obj_pal gMonShinyPalette_Paras, PAL_ID_SHINY + SPECIES_PARAS
-	obj_pal gMonShinyPalette_Parasect, PAL_ID_SHINY + SPECIES_PARASECT
-	obj_pal gMonShinyPalette_Venonat, PAL_ID_SHINY + SPECIES_VENONAT
-	obj_pal gMonShinyPalette_Venomoth, PAL_ID_SHINY + SPECIES_VENOMOTH
-	obj_pal gMonShinyPalette_Diglett, PAL_ID_SHINY + SPECIES_DIGLETT
-	obj_pal gMonShinyPalette_Dugtrio, PAL_ID_SHINY + SPECIES_DUGTRIO
-	obj_pal gMonShinyPalette_Meowth, PAL_ID_SHINY + SPECIES_MEOWTH
-	obj_pal gMonShinyPalette_Persian, PAL_ID_SHINY + SPECIES_PERSIAN
-	obj_pal gMonShinyPalette_Psyduck, PAL_ID_SHINY + SPECIES_PSYDUCK
-	obj_pal gMonShinyPalette_Golduck, PAL_ID_SHINY + SPECIES_GOLDUCK
-	obj_pal gMonShinyPalette_Mankey, PAL_ID_SHINY + SPECIES_MANKEY
-	obj_pal gMonShinyPalette_Primeape, PAL_ID_SHINY + SPECIES_PRIMEAPE
-	obj_pal gMonShinyPalette_Growlithe, PAL_ID_SHINY + SPECIES_GROWLITHE
-	obj_pal gMonShinyPalette_Arcanine, PAL_ID_SHINY + SPECIES_ARCANINE
-	obj_pal gMonShinyPalette_Poliwag, PAL_ID_SHINY + SPECIES_POLIWAG
-	obj_pal gMonShinyPalette_Poliwhirl, PAL_ID_SHINY + SPECIES_POLIWHIRL
-	obj_pal gMonShinyPalette_Poliwrath, PAL_ID_SHINY + SPECIES_POLIWRATH
-	obj_pal gMonShinyPalette_Abra, PAL_ID_SHINY + SPECIES_ABRA
-	obj_pal gMonShinyPalette_Kadabra, PAL_ID_SHINY + SPECIES_KADABRA
-	obj_pal gMonShinyPalette_Alakazam, PAL_ID_SHINY + SPECIES_ALAKAZAM
-	obj_pal gMonShinyPalette_Machop, PAL_ID_SHINY + SPECIES_MACHOP
-	obj_pal gMonShinyPalette_Machoke, PAL_ID_SHINY + SPECIES_MACHOKE
-	obj_pal gMonShinyPalette_Machamp, PAL_ID_SHINY + SPECIES_MACHAMP
-	obj_pal gMonShinyPalette_Bellsprout, PAL_ID_SHINY + SPECIES_BELLSPROUT
-	obj_pal gMonShinyPalette_Weepinbell, PAL_ID_SHINY + SPECIES_WEEPINBELL
-	obj_pal gMonShinyPalette_Victreebel, PAL_ID_SHINY + SPECIES_VICTREEBEL
-	obj_pal gMonShinyPalette_Tentacool, PAL_ID_SHINY + SPECIES_TENTACOOL
-	obj_pal gMonShinyPalette_Tentacruel, PAL_ID_SHINY + SPECIES_TENTACRUEL
-	obj_pal gMonShinyPalette_Geodude, PAL_ID_SHINY + SPECIES_GEODUDE
-	obj_pal gMonShinyPalette_Graveler, PAL_ID_SHINY + SPECIES_GRAVELER
-	obj_pal gMonShinyPalette_Golem, PAL_ID_SHINY + SPECIES_GOLEM
-	obj_pal gMonShinyPalette_Ponyta, PAL_ID_SHINY + SPECIES_PONYTA
-	obj_pal gMonShinyPalette_Rapidash, PAL_ID_SHINY + SPECIES_RAPIDASH
-	obj_pal gMonShinyPalette_Slowpoke, PAL_ID_SHINY + SPECIES_SLOWPOKE
-	obj_pal gMonShinyPalette_Slowbro, PAL_ID_SHINY + SPECIES_SLOWBRO
-	obj_pal gMonShinyPalette_Magnemite, PAL_ID_SHINY + SPECIES_MAGNEMITE
-	obj_pal gMonShinyPalette_Magneton, PAL_ID_SHINY + SPECIES_MAGNETON
-	obj_pal gMonShinyPalette_Farfetchd, PAL_ID_SHINY + SPECIES_FARFETCHD
-	obj_pal gMonShinyPalette_Doduo, PAL_ID_SHINY + SPECIES_DODUO
-	obj_pal gMonShinyPalette_Dodrio, PAL_ID_SHINY + SPECIES_DODRIO
-	obj_pal gMonShinyPalette_Seel, PAL_ID_SHINY + SPECIES_SEEL
-	obj_pal gMonShinyPalette_Dewgong, PAL_ID_SHINY + SPECIES_DEWGONG
-	obj_pal gMonShinyPalette_Grimer, PAL_ID_SHINY + SPECIES_GRIMER
-	obj_pal gMonShinyPalette_Muk, PAL_ID_SHINY + SPECIES_MUK
-	obj_pal gMonShinyPalette_Shellder, PAL_ID_SHINY + SPECIES_SHELLDER
-	obj_pal gMonShinyPalette_Cloyster, PAL_ID_SHINY + SPECIES_CLOYSTER
-	obj_pal gMonShinyPalette_Gastly, PAL_ID_SHINY + SPECIES_GASTLY
-	obj_pal gMonShinyPalette_Haunter, PAL_ID_SHINY + SPECIES_HAUNTER
-	obj_pal gMonShinyPalette_Gengar, PAL_ID_SHINY + SPECIES_GENGAR
-	obj_pal gMonShinyPalette_Onix, PAL_ID_SHINY + SPECIES_ONIX
-	obj_pal gMonShinyPalette_Drowzee, PAL_ID_SHINY + SPECIES_DROWZEE
-	obj_pal gMonShinyPalette_Hypno, PAL_ID_SHINY + SPECIES_HYPNO
-	obj_pal gMonShinyPalette_Krabby, PAL_ID_SHINY + SPECIES_KRABBY
-	obj_pal gMonShinyPalette_Kingler, PAL_ID_SHINY + SPECIES_KINGLER
-	obj_pal gMonShinyPalette_Voltorb, PAL_ID_SHINY + SPECIES_VOLTORB
-	obj_pal gMonShinyPalette_Electrode, PAL_ID_SHINY + SPECIES_ELECTRODE
-	obj_pal gMonShinyPalette_Exeggcute, PAL_ID_SHINY + SPECIES_EXEGGCUTE
-	obj_pal gMonShinyPalette_Exeggutor, PAL_ID_SHINY + SPECIES_EXEGGUTOR
-	obj_pal gMonShinyPalette_Cubone, PAL_ID_SHINY + SPECIES_CUBONE
-	obj_pal gMonShinyPalette_Marowak, PAL_ID_SHINY + SPECIES_MAROWAK
-	obj_pal gMonShinyPalette_Hitmonlee, PAL_ID_SHINY + SPECIES_HITMONLEE
-	obj_pal gMonShinyPalette_Hitmonchan, PAL_ID_SHINY + SPECIES_HITMONCHAN
-	obj_pal gMonShinyPalette_Lickitung, PAL_ID_SHINY + SPECIES_LICKITUNG
-	obj_pal gMonShinyPalette_Koffing, PAL_ID_SHINY + SPECIES_KOFFING
-	obj_pal gMonShinyPalette_Weezing, PAL_ID_SHINY + SPECIES_WEEZING
-	obj_pal gMonShinyPalette_Rhyhorn, PAL_ID_SHINY + SPECIES_RHYHORN
-	obj_pal gMonShinyPalette_Rhydon, PAL_ID_SHINY + SPECIES_RHYDON
-	obj_pal gMonShinyPalette_Chansey, PAL_ID_SHINY + SPECIES_CHANSEY
-	obj_pal gMonShinyPalette_Tangela, PAL_ID_SHINY + SPECIES_TANGELA
-	obj_pal gMonShinyPalette_Kangaskhan, PAL_ID_SHINY + SPECIES_KANGASKHAN
-	obj_pal gMonShinyPalette_Horsea, PAL_ID_SHINY + SPECIES_HORSEA
-	obj_pal gMonShinyPalette_Seadra, PAL_ID_SHINY + SPECIES_SEADRA
-	obj_pal gMonShinyPalette_Goldeen, PAL_ID_SHINY + SPECIES_GOLDEEN
-	obj_pal gMonShinyPalette_Seaking, PAL_ID_SHINY + SPECIES_SEAKING
-	obj_pal gMonShinyPalette_Staryu, PAL_ID_SHINY + SPECIES_STARYU
-	obj_pal gMonShinyPalette_Starmie, PAL_ID_SHINY + SPECIES_STARMIE
-	obj_pal gMonShinyPalette_Mrmime, PAL_ID_SHINY + SPECIES_MR_MIME
-	obj_pal gMonShinyPalette_Scyther, PAL_ID_SHINY + SPECIES_SCYTHER
-	obj_pal gMonShinyPalette_Jynx, PAL_ID_SHINY + SPECIES_JYNX
-	obj_pal gMonShinyPalette_Electabuzz, PAL_ID_SHINY + SPECIES_ELECTABUZZ
-	obj_pal gMonShinyPalette_Magmar, PAL_ID_SHINY + SPECIES_MAGMAR
-	obj_pal gMonShinyPalette_Pinsir, PAL_ID_SHINY + SPECIES_PINSIR
-	obj_pal gMonShinyPalette_Tauros, PAL_ID_SHINY + SPECIES_TAUROS
-	obj_pal gMonShinyPalette_Magikarp, PAL_ID_SHINY + SPECIES_MAGIKARP
-	obj_pal gMonShinyPalette_Gyarados, PAL_ID_SHINY + SPECIES_GYARADOS
-	obj_pal gMonShinyPalette_Lapras, PAL_ID_SHINY + SPECIES_LAPRAS
-	obj_pal gMonShinyPalette_Ditto, PAL_ID_SHINY + SPECIES_DITTO
-	obj_pal gMonShinyPalette_Eevee, PAL_ID_SHINY + SPECIES_EEVEE
-	obj_pal gMonShinyPalette_Vaporeon, PAL_ID_SHINY + SPECIES_VAPOREON
-	obj_pal gMonShinyPalette_Jolteon, PAL_ID_SHINY + SPECIES_JOLTEON
-	obj_pal gMonShinyPalette_Flareon, PAL_ID_SHINY + SPECIES_FLAREON
-	obj_pal gMonShinyPalette_Porygon, PAL_ID_SHINY + SPECIES_PORYGON
-	obj_pal gMonShinyPalette_Omanyte, PAL_ID_SHINY + SPECIES_OMANYTE
-	obj_pal gMonShinyPalette_Omastar, PAL_ID_SHINY + SPECIES_OMASTAR
-	obj_pal gMonShinyPalette_Kabuto, PAL_ID_SHINY + SPECIES_KABUTO
-	obj_pal gMonShinyPalette_Kabutops, PAL_ID_SHINY + SPECIES_KABUTOPS
-	obj_pal gMonShinyPalette_Aerodactyl, PAL_ID_SHINY + SPECIES_AERODACTYL
-	obj_pal gMonShinyPalette_Snorlax, PAL_ID_SHINY + SPECIES_SNORLAX
-	obj_pal gMonShinyPalette_Articuno, PAL_ID_SHINY + SPECIES_ARTICUNO
-	obj_pal gMonShinyPalette_Zapdos, PAL_ID_SHINY + SPECIES_ZAPDOS
-	obj_pal gMonShinyPalette_Moltres, PAL_ID_SHINY + SPECIES_MOLTRES
-	obj_pal gMonShinyPalette_Dratini, PAL_ID_SHINY + SPECIES_DRATINI
-	obj_pal gMonShinyPalette_Dragonair, PAL_ID_SHINY + SPECIES_DRAGONAIR
-	obj_pal gMonShinyPalette_Dragonite, PAL_ID_SHINY + SPECIES_DRAGONITE
-	obj_pal gMonShinyPalette_Mewtwo, PAL_ID_SHINY + SPECIES_MEWTWO
-	obj_pal gMonShinyPalette_Mew, PAL_ID_SHINY + SPECIES_MEW
-	obj_pal gMonShinyPalette_Chikorita, PAL_ID_SHINY + SPECIES_CHIKORITA
-	obj_pal gMonShinyPalette_Bayleef, PAL_ID_SHINY + SPECIES_BAYLEEF
-	obj_pal gMonShinyPalette_Meganium, PAL_ID_SHINY + SPECIES_MEGANIUM
-	obj_pal gMonShinyPalette_Cyndaquil, PAL_ID_SHINY + SPECIES_CYNDAQUIL
-	obj_pal gMonShinyPalette_Quilava, PAL_ID_SHINY + SPECIES_QUILAVA
-	obj_pal gMonShinyPalette_Typhlosion, PAL_ID_SHINY + SPECIES_TYPHLOSION
-	obj_pal gMonShinyPalette_Totodile, PAL_ID_SHINY + SPECIES_TOTODILE
-	obj_pal gMonShinyPalette_Croconaw, PAL_ID_SHINY + SPECIES_CROCONAW
-	obj_pal gMonShinyPalette_Feraligatr, PAL_ID_SHINY + SPECIES_FERALIGATR
-	obj_pal gMonShinyPalette_Sentret, PAL_ID_SHINY + SPECIES_SENTRET
-	obj_pal gMonShinyPalette_Furret, PAL_ID_SHINY + SPECIES_FURRET
-	obj_pal gMonShinyPalette_Hoothoot, PAL_ID_SHINY + SPECIES_HOOTHOOT
-	obj_pal gMonShinyPalette_Noctowl, PAL_ID_SHINY + SPECIES_NOCTOWL
-	obj_pal gMonShinyPalette_Ledyba, PAL_ID_SHINY + SPECIES_LEDYBA
-	obj_pal gMonShinyPalette_Ledian, PAL_ID_SHINY + SPECIES_LEDIAN
-	obj_pal gMonShinyPalette_Spinarak, PAL_ID_SHINY + SPECIES_SPINARAK
-	obj_pal gMonShinyPalette_Ariados, PAL_ID_SHINY + SPECIES_ARIADOS
-	obj_pal gMonShinyPalette_Crobat, PAL_ID_SHINY + SPECIES_CROBAT
-	obj_pal gMonShinyPalette_Chinchou, PAL_ID_SHINY + SPECIES_CHINCHOU
-	obj_pal gMonShinyPalette_Lanturn, PAL_ID_SHINY + SPECIES_LANTURN
-	obj_pal gMonShinyPalette_Pichu, PAL_ID_SHINY + SPECIES_PICHU
-	obj_pal gMonShinyPalette_Cleffa, PAL_ID_SHINY + SPECIES_CLEFFA
-	obj_pal gMonShinyPalette_Igglybuff, PAL_ID_SHINY + SPECIES_IGGLYBUFF
-	obj_pal gMonShinyPalette_Togepi, PAL_ID_SHINY + SPECIES_TOGEPI
-	obj_pal gMonShinyPalette_Togetic, PAL_ID_SHINY + SPECIES_TOGETIC
-	obj_pal gMonShinyPalette_Natu, PAL_ID_SHINY + SPECIES_NATU
-	obj_pal gMonShinyPalette_Xatu, PAL_ID_SHINY + SPECIES_XATU
-	obj_pal gMonShinyPalette_Mareep, PAL_ID_SHINY + SPECIES_MAREEP
-	obj_pal gMonShinyPalette_Flaaffy, PAL_ID_SHINY + SPECIES_FLAAFFY
-	obj_pal gMonShinyPalette_Ampharos, PAL_ID_SHINY + SPECIES_AMPHAROS
-	obj_pal gMonShinyPalette_Bellossom, PAL_ID_SHINY + SPECIES_BELLOSSOM
-	obj_pal gMonShinyPalette_Marill, PAL_ID_SHINY + SPECIES_MARILL
-	obj_pal gMonShinyPalette_Azumarill, PAL_ID_SHINY + SPECIES_AZUMARILL
-	obj_pal gMonShinyPalette_Sudowoodo, PAL_ID_SHINY + SPECIES_SUDOWOODO
-	obj_pal gMonShinyPalette_Politoed, PAL_ID_SHINY + SPECIES_POLITOED
-	obj_pal gMonShinyPalette_Hoppip, PAL_ID_SHINY + SPECIES_HOPPIP
-	obj_pal gMonShinyPalette_Skiploom, PAL_ID_SHINY + SPECIES_SKIPLOOM
-	obj_pal gMonShinyPalette_Jumpluff, PAL_ID_SHINY + SPECIES_JUMPLUFF
-	obj_pal gMonShinyPalette_Aipom, PAL_ID_SHINY + SPECIES_AIPOM
-	obj_pal gMonShinyPalette_Sunkern, PAL_ID_SHINY + SPECIES_SUNKERN
-	obj_pal gMonShinyPalette_Sunflora, PAL_ID_SHINY + SPECIES_SUNFLORA
-	obj_pal gMonShinyPalette_Yanma, PAL_ID_SHINY + SPECIES_YANMA
-	obj_pal gMonShinyPalette_Wooper, PAL_ID_SHINY + SPECIES_WOOPER
-	obj_pal gMonShinyPalette_Quagsire, PAL_ID_SHINY + SPECIES_QUAGSIRE
-	obj_pal gMonShinyPalette_Espeon, PAL_ID_SHINY + SPECIES_ESPEON
-	obj_pal gMonShinyPalette_Umbreon, PAL_ID_SHINY + SPECIES_UMBREON
-	obj_pal gMonShinyPalette_Murkrow, PAL_ID_SHINY + SPECIES_MURKROW
-	obj_pal gMonShinyPalette_Slowking, PAL_ID_SHINY + SPECIES_SLOWKING
-	obj_pal gMonShinyPalette_Misdreavus, PAL_ID_SHINY + SPECIES_MISDREAVUS
-	obj_pal gMonShinyPalette_Unown, PAL_ID_SHINY + SPECIES_UNOWN
-	obj_pal gMonShinyPalette_Wobbuffet, PAL_ID_SHINY + SPECIES_WOBBUFFET
-	obj_pal gMonShinyPalette_Girafarig, PAL_ID_SHINY + SPECIES_GIRAFARIG
-	obj_pal gMonShinyPalette_Pineco, PAL_ID_SHINY + SPECIES_PINECO
-	obj_pal gMonShinyPalette_Forretress, PAL_ID_SHINY + SPECIES_FORRETRESS
-	obj_pal gMonShinyPalette_Dunsparce, PAL_ID_SHINY + SPECIES_DUNSPARCE
-	obj_pal gMonShinyPalette_Gligar, PAL_ID_SHINY + SPECIES_GLIGAR
-	obj_pal gMonShinyPalette_Steelix, PAL_ID_SHINY + SPECIES_STEELIX
-	obj_pal gMonShinyPalette_Snubbull, PAL_ID_SHINY + SPECIES_SNUBBULL
-	obj_pal gMonShinyPalette_Granbull, PAL_ID_SHINY + SPECIES_GRANBULL
-	obj_pal gMonShinyPalette_Qwilfish, PAL_ID_SHINY + SPECIES_QWILFISH
-	obj_pal gMonShinyPalette_Scizor, PAL_ID_SHINY + SPECIES_SCIZOR
-	obj_pal gMonShinyPalette_Shuckle, PAL_ID_SHINY + SPECIES_SHUCKLE
-	obj_pal gMonShinyPalette_Heracross, PAL_ID_SHINY + SPECIES_HERACROSS
-	obj_pal gMonShinyPalette_Sneasel, PAL_ID_SHINY + SPECIES_SNEASEL
-	obj_pal gMonShinyPalette_Teddiursa, PAL_ID_SHINY + SPECIES_TEDDIURSA
-	obj_pal gMonShinyPalette_Ursaring, PAL_ID_SHINY + SPECIES_URSARING
-	obj_pal gMonShinyPalette_Slugma, PAL_ID_SHINY + SPECIES_SLUGMA
-	obj_pal gMonShinyPalette_Magcargo, PAL_ID_SHINY + SPECIES_MAGCARGO
-	obj_pal gMonShinyPalette_Swinub, PAL_ID_SHINY + SPECIES_SWINUB
-	obj_pal gMonShinyPalette_Piloswine, PAL_ID_SHINY + SPECIES_PILOSWINE
-	obj_pal gMonShinyPalette_Corsola, PAL_ID_SHINY + SPECIES_CORSOLA
-	obj_pal gMonShinyPalette_Remoraid, PAL_ID_SHINY + SPECIES_REMORAID
-	obj_pal gMonShinyPalette_Octillery, PAL_ID_SHINY + SPECIES_OCTILLERY
-	obj_pal gMonShinyPalette_Delibird, PAL_ID_SHINY + SPECIES_DELIBIRD
-	obj_pal gMonShinyPalette_Mantine, PAL_ID_SHINY + SPECIES_MANTINE
-	obj_pal gMonShinyPalette_Skarmory, PAL_ID_SHINY + SPECIES_SKARMORY
-	obj_pal gMonShinyPalette_Houndour, PAL_ID_SHINY + SPECIES_HOUNDOUR
-	obj_pal gMonShinyPalette_Houndoom, PAL_ID_SHINY + SPECIES_HOUNDOOM
-	obj_pal gMonShinyPalette_Kingdra, PAL_ID_SHINY + SPECIES_KINGDRA
-	obj_pal gMonShinyPalette_Phanpy, PAL_ID_SHINY + SPECIES_PHANPY
-	obj_pal gMonShinyPalette_Donphan, PAL_ID_SHINY + SPECIES_DONPHAN
-	obj_pal gMonShinyPalette_Porygon2, PAL_ID_SHINY + SPECIES_PORYGON2
-	obj_pal gMonShinyPalette_Stantler, PAL_ID_SHINY + SPECIES_STANTLER
-	obj_pal gMonShinyPalette_Smeargle, PAL_ID_SHINY + SPECIES_SMEARGLE
-	obj_pal gMonShinyPalette_Tyrogue, PAL_ID_SHINY + SPECIES_TYROGUE
-	obj_pal gMonShinyPalette_Hitmontop, PAL_ID_SHINY + SPECIES_HITMONTOP
-	obj_pal gMonShinyPalette_Smoochum, PAL_ID_SHINY + SPECIES_SMOOCHUM
-	obj_pal gMonShinyPalette_Elekid, PAL_ID_SHINY + SPECIES_ELEKID
-	obj_pal gMonShinyPalette_Magby, PAL_ID_SHINY + SPECIES_MAGBY
-	obj_pal gMonShinyPalette_Miltank, PAL_ID_SHINY + SPECIES_MILTANK
-	obj_pal gMonShinyPalette_Blissey, PAL_ID_SHINY + SPECIES_BLISSEY
-	obj_pal gMonShinyPalette_Raikou, PAL_ID_SHINY + SPECIES_RAIKOU
-	obj_pal gMonShinyPalette_Entei, PAL_ID_SHINY + SPECIES_ENTEI
-	obj_pal gMonShinyPalette_Suicune, PAL_ID_SHINY + SPECIES_SUICUNE
-	obj_pal gMonShinyPalette_Larvitar, PAL_ID_SHINY + SPECIES_LARVITAR
-	obj_pal gMonShinyPalette_Pupitar, PAL_ID_SHINY + SPECIES_PUPITAR
-	obj_pal gMonShinyPalette_Tyranitar, PAL_ID_SHINY + SPECIES_TYRANITAR
-	obj_pal gMonShinyPalette_Lugia, PAL_ID_SHINY + SPECIES_LUGIA
-	obj_pal gMonShinyPalette_HoOh, PAL_ID_SHINY + SPECIES_HO_OH
-	obj_pal gMonShinyPalette_Celebi, PAL_ID_SHINY + SPECIES_CELEBI
-	obj_pal gMonShinyPalette_QuestionMark, PAL_ID_SHINY + SPECIES_OLD_UNOWN_B
-	obj_pal gMonShinyPalette_QuestionMark, PAL_ID_SHINY + SPECIES_OLD_UNOWN_C
-	obj_pal gMonShinyPalette_QuestionMark, PAL_ID_SHINY + SPECIES_OLD_UNOWN_D
-	obj_pal gMonShinyPalette_QuestionMark, PAL_ID_SHINY + SPECIES_OLD_UNOWN_E
-	obj_pal gMonShinyPalette_QuestionMark, PAL_ID_SHINY + SPECIES_OLD_UNOWN_F
-	obj_pal gMonShinyPalette_QuestionMark, PAL_ID_SHINY + SPECIES_OLD_UNOWN_G
-	obj_pal gMonShinyPalette_QuestionMark, PAL_ID_SHINY + SPECIES_OLD_UNOWN_H
-	obj_pal gMonShinyPalette_QuestionMark, PAL_ID_SHINY + SPECIES_OLD_UNOWN_I
-	obj_pal gMonShinyPalette_QuestionMark, PAL_ID_SHINY + SPECIES_OLD_UNOWN_J
-	obj_pal gMonShinyPalette_QuestionMark, PAL_ID_SHINY + SPECIES_OLD_UNOWN_K
-	obj_pal gMonShinyPalette_QuestionMark, PAL_ID_SHINY + SPECIES_OLD_UNOWN_L
-	obj_pal gMonShinyPalette_QuestionMark, PAL_ID_SHINY + SPECIES_OLD_UNOWN_M
-	obj_pal gMonShinyPalette_QuestionMark, PAL_ID_SHINY + SPECIES_OLD_UNOWN_N
-	obj_pal gMonShinyPalette_QuestionMark, PAL_ID_SHINY + SPECIES_OLD_UNOWN_O
-	obj_pal gMonShinyPalette_QuestionMark, PAL_ID_SHINY + SPECIES_OLD_UNOWN_P
-	obj_pal gMonShinyPalette_QuestionMark, PAL_ID_SHINY + SPECIES_OLD_UNOWN_Q
-	obj_pal gMonShinyPalette_QuestionMark, PAL_ID_SHINY + SPECIES_OLD_UNOWN_R
-	obj_pal gMonShinyPalette_QuestionMark, PAL_ID_SHINY + SPECIES_OLD_UNOWN_S
-	obj_pal gMonShinyPalette_QuestionMark, PAL_ID_SHINY + SPECIES_OLD_UNOWN_T
-	obj_pal gMonShinyPalette_QuestionMark, PAL_ID_SHINY + SPECIES_OLD_UNOWN_U
-	obj_pal gMonShinyPalette_QuestionMark, PAL_ID_SHINY + SPECIES_OLD_UNOWN_V
-	obj_pal gMonShinyPalette_QuestionMark, PAL_ID_SHINY + SPECIES_OLD_UNOWN_W
-	obj_pal gMonShinyPalette_QuestionMark, PAL_ID_SHINY + SPECIES_OLD_UNOWN_X
-	obj_pal gMonShinyPalette_QuestionMark, PAL_ID_SHINY + SPECIES_OLD_UNOWN_Y
-	obj_pal gMonShinyPalette_QuestionMark, PAL_ID_SHINY + SPECIES_OLD_UNOWN_Z
-	obj_pal gMonShinyPalette_Treecko, PAL_ID_SHINY + SPECIES_TREECKO
-	obj_pal gMonShinyPalette_Grovyle, PAL_ID_SHINY + SPECIES_GROVYLE
-	obj_pal gMonShinyPalette_Sceptile, PAL_ID_SHINY + SPECIES_SCEPTILE
-	obj_pal gMonShinyPalette_Torchic, PAL_ID_SHINY + SPECIES_TORCHIC
-	obj_pal gMonShinyPalette_Combusken, PAL_ID_SHINY + SPECIES_COMBUSKEN
-	obj_pal gMonShinyPalette_Blaziken, PAL_ID_SHINY + SPECIES_BLAZIKEN
-	obj_pal gMonShinyPalette_Mudkip, PAL_ID_SHINY + SPECIES_MUDKIP
-	obj_pal gMonShinyPalette_Marshtomp, PAL_ID_SHINY + SPECIES_MARSHTOMP
-	obj_pal gMonShinyPalette_Swampert, PAL_ID_SHINY + SPECIES_SWAMPERT
-	obj_pal gMonShinyPalette_Poochyena, PAL_ID_SHINY + SPECIES_POOCHYENA
-	obj_pal gMonShinyPalette_Mightyena, PAL_ID_SHINY + SPECIES_MIGHTYENA
-	obj_pal gMonShinyPalette_Zigzagoon, PAL_ID_SHINY + SPECIES_ZIGZAGOON
-	obj_pal gMonShinyPalette_Linoone, PAL_ID_SHINY + SPECIES_LINOONE
-	obj_pal gMonShinyPalette_Wurmple, PAL_ID_SHINY + SPECIES_WURMPLE
-	obj_pal gMonShinyPalette_Silcoon, PAL_ID_SHINY + SPECIES_SILCOON
-	obj_pal gMonShinyPalette_Beautifly, PAL_ID_SHINY + SPECIES_BEAUTIFLY
-	obj_pal gMonShinyPalette_Cascoon, PAL_ID_SHINY + SPECIES_CASCOON
-	obj_pal gMonShinyPalette_Dustox, PAL_ID_SHINY + SPECIES_DUSTOX
-	obj_pal gMonShinyPalette_Lotad, PAL_ID_SHINY + SPECIES_LOTAD
-	obj_pal gMonShinyPalette_Lombre, PAL_ID_SHINY + SPECIES_LOMBRE
-	obj_pal gMonShinyPalette_Ludicolo, PAL_ID_SHINY + SPECIES_LUDICOLO
-	obj_pal gMonShinyPalette_Seedot, PAL_ID_SHINY + SPECIES_SEEDOT
-	obj_pal gMonShinyPalette_Nuzleaf, PAL_ID_SHINY + SPECIES_NUZLEAF
-	obj_pal gMonShinyPalette_Shiftry, PAL_ID_SHINY + SPECIES_SHIFTRY
-	obj_pal gMonShinyPalette_Nincada, PAL_ID_SHINY + SPECIES_NINCADA
-	obj_pal gMonShinyPalette_Ninjask, PAL_ID_SHINY + SPECIES_NINJASK
-	obj_pal gMonShinyPalette_Shedinja, PAL_ID_SHINY + SPECIES_SHEDINJA
-	obj_pal gMonShinyPalette_Taillow, PAL_ID_SHINY + SPECIES_TAILLOW
-	obj_pal gMonShinyPalette_Swellow, PAL_ID_SHINY + SPECIES_SWELLOW
-	obj_pal gMonShinyPalette_Shroomish, PAL_ID_SHINY + SPECIES_SHROOMISH
-	obj_pal gMonShinyPalette_Breloom, PAL_ID_SHINY + SPECIES_BRELOOM
-	obj_pal gMonShinyPalette_Spinda, PAL_ID_SHINY + SPECIES_SPINDA
-	obj_pal gMonShinyPalette_Wingull, PAL_ID_SHINY + SPECIES_WINGULL
-	obj_pal gMonShinyPalette_Pelipper, PAL_ID_SHINY + SPECIES_PELIPPER
-	obj_pal gMonShinyPalette_Surskit, PAL_ID_SHINY + SPECIES_SURSKIT
-	obj_pal gMonShinyPalette_Masquerain, PAL_ID_SHINY + SPECIES_MASQUERAIN
-	obj_pal gMonShinyPalette_Wailmer, PAL_ID_SHINY + SPECIES_WAILMER
-	obj_pal gMonShinyPalette_Wailord, PAL_ID_SHINY + SPECIES_WAILORD
-	obj_pal gMonShinyPalette_Skitty, PAL_ID_SHINY + SPECIES_SKITTY
-	obj_pal gMonShinyPalette_Delcatty, PAL_ID_SHINY + SPECIES_DELCATTY
-	obj_pal gMonShinyPalette_Kecleon, PAL_ID_SHINY + SPECIES_KECLEON
-	obj_pal gMonShinyPalette_Baltoy, PAL_ID_SHINY + SPECIES_BALTOY
-	obj_pal gMonShinyPalette_Claydol, PAL_ID_SHINY + SPECIES_CLAYDOL
-	obj_pal gMonShinyPalette_Nosepass, PAL_ID_SHINY + SPECIES_NOSEPASS
-	obj_pal gMonShinyPalette_Torkoal, PAL_ID_SHINY + SPECIES_TORKOAL
-	obj_pal gMonShinyPalette_Sableye, PAL_ID_SHINY + SPECIES_SABLEYE
-	obj_pal gMonShinyPalette_Barboach, PAL_ID_SHINY + SPECIES_BARBOACH
-	obj_pal gMonShinyPalette_Whiscash, PAL_ID_SHINY + SPECIES_WHISCASH
-	obj_pal gMonShinyPalette_Luvdisc, PAL_ID_SHINY + SPECIES_LUVDISC
-	obj_pal gMonShinyPalette_Corphish, PAL_ID_SHINY + SPECIES_CORPHISH
-	obj_pal gMonShinyPalette_Crawdaunt, PAL_ID_SHINY + SPECIES_CRAWDAUNT
-	obj_pal gMonShinyPalette_Feebas, PAL_ID_SHINY + SPECIES_FEEBAS
-	obj_pal gMonShinyPalette_Milotic, PAL_ID_SHINY + SPECIES_MILOTIC
-	obj_pal gMonShinyPalette_Carvanha, PAL_ID_SHINY + SPECIES_CARVANHA
-	obj_pal gMonShinyPalette_Sharpedo, PAL_ID_SHINY + SPECIES_SHARPEDO
-	obj_pal gMonShinyPalette_Trapinch, PAL_ID_SHINY + SPECIES_TRAPINCH
-	obj_pal gMonShinyPalette_Vibrava, PAL_ID_SHINY + SPECIES_VIBRAVA
-	obj_pal gMonShinyPalette_Flygon, PAL_ID_SHINY + SPECIES_FLYGON
-	obj_pal gMonShinyPalette_Makuhita, PAL_ID_SHINY + SPECIES_MAKUHITA
-	obj_pal gMonShinyPalette_Hariyama, PAL_ID_SHINY + SPECIES_HARIYAMA
-	obj_pal gMonShinyPalette_Electrike, PAL_ID_SHINY + SPECIES_ELECTRIKE
-	obj_pal gMonShinyPalette_Manectric, PAL_ID_SHINY + SPECIES_MANECTRIC
-	obj_pal gMonShinyPalette_Numel, PAL_ID_SHINY + SPECIES_NUMEL
-	obj_pal gMonShinyPalette_Camerupt, PAL_ID_SHINY + SPECIES_CAMERUPT
-	obj_pal gMonShinyPalette_Spheal, PAL_ID_SHINY + SPECIES_SPHEAL
-	obj_pal gMonShinyPalette_Sealeo, PAL_ID_SHINY + SPECIES_SEALEO
-	obj_pal gMonShinyPalette_Walrein, PAL_ID_SHINY + SPECIES_WALREIN
-	obj_pal gMonShinyPalette_Cacnea, PAL_ID_SHINY + SPECIES_CACNEA
-	obj_pal gMonShinyPalette_Cacturne, PAL_ID_SHINY + SPECIES_CACTURNE
-	obj_pal gMonShinyPalette_Snorunt, PAL_ID_SHINY + SPECIES_SNORUNT
-	obj_pal gMonShinyPalette_Glalie, PAL_ID_SHINY + SPECIES_GLALIE
-	obj_pal gMonShinyPalette_Lunatone, PAL_ID_SHINY + SPECIES_LUNATONE
-	obj_pal gMonShinyPalette_Solrock, PAL_ID_SHINY + SPECIES_SOLROCK
-	obj_pal gMonShinyPalette_Azurill, PAL_ID_SHINY + SPECIES_AZURILL
-	obj_pal gMonShinyPalette_Spoink, PAL_ID_SHINY + SPECIES_SPOINK
-	obj_pal gMonShinyPalette_Grumpig, PAL_ID_SHINY + SPECIES_GRUMPIG
-	obj_pal gMonShinyPalette_Plusle, PAL_ID_SHINY + SPECIES_PLUSLE
-	obj_pal gMonShinyPalette_Minun, PAL_ID_SHINY + SPECIES_MINUN
-	obj_pal gMonShinyPalette_Mawile, PAL_ID_SHINY + SPECIES_MAWILE
-	obj_pal gMonShinyPalette_Meditite, PAL_ID_SHINY + SPECIES_MEDITITE
-	obj_pal gMonShinyPalette_Medicham, PAL_ID_SHINY + SPECIES_MEDICHAM
-	obj_pal gMonShinyPalette_Swablu, PAL_ID_SHINY + SPECIES_SWABLU
-	obj_pal gMonShinyPalette_Altaria, PAL_ID_SHINY + SPECIES_ALTARIA
-	obj_pal gMonShinyPalette_Wynaut, PAL_ID_SHINY + SPECIES_WYNAUT
-	obj_pal gMonShinyPalette_Duskull, PAL_ID_SHINY + SPECIES_DUSKULL
-	obj_pal gMonShinyPalette_Dusclops, PAL_ID_SHINY + SPECIES_DUSCLOPS
-	obj_pal gMonShinyPalette_Roselia, PAL_ID_SHINY + SPECIES_ROSELIA
-	obj_pal gMonShinyPalette_Slakoth, PAL_ID_SHINY + SPECIES_SLAKOTH
-	obj_pal gMonShinyPalette_Vigoroth, PAL_ID_SHINY + SPECIES_VIGOROTH
-	obj_pal gMonShinyPalette_Slaking, PAL_ID_SHINY + SPECIES_SLAKING
-	obj_pal gMonShinyPalette_Gulpin, PAL_ID_SHINY + SPECIES_GULPIN
-	obj_pal gMonShinyPalette_Swalot, PAL_ID_SHINY + SPECIES_SWALOT
-	obj_pal gMonShinyPalette_Tropius, PAL_ID_SHINY + SPECIES_TROPIUS
-	obj_pal gMonShinyPalette_Whismur, PAL_ID_SHINY + SPECIES_WHISMUR
-	obj_pal gMonShinyPalette_Loudred, PAL_ID_SHINY + SPECIES_LOUDRED
-	obj_pal gMonShinyPalette_Exploud, PAL_ID_SHINY + SPECIES_EXPLOUD
-	obj_pal gMonShinyPalette_Clamperl, PAL_ID_SHINY + SPECIES_CLAMPERL
-	obj_pal gMonShinyPalette_Huntail, PAL_ID_SHINY + SPECIES_HUNTAIL
-	obj_pal gMonShinyPalette_Gorebyss, PAL_ID_SHINY + SPECIES_GOREBYSS
-	obj_pal gMonShinyPalette_Absol, PAL_ID_SHINY + SPECIES_ABSOL
-	obj_pal gMonShinyPalette_Shuppet, PAL_ID_SHINY + SPECIES_SHUPPET
-	obj_pal gMonShinyPalette_Banette, PAL_ID_SHINY + SPECIES_BANETTE
-	obj_pal gMonShinyPalette_Seviper, PAL_ID_SHINY + SPECIES_SEVIPER
-	obj_pal gMonShinyPalette_Zangoose, PAL_ID_SHINY + SPECIES_ZANGOOSE
-	obj_pal gMonShinyPalette_Relicanth, PAL_ID_SHINY + SPECIES_RELICANTH
-	obj_pal gMonShinyPalette_Aron, PAL_ID_SHINY + SPECIES_ARON
-	obj_pal gMonShinyPalette_Lairon, PAL_ID_SHINY + SPECIES_LAIRON
-	obj_pal gMonShinyPalette_Aggron, PAL_ID_SHINY + SPECIES_AGGRON
-	obj_pal gMonShinyPalette_Castform, PAL_ID_SHINY + SPECIES_CASTFORM
-	obj_pal gMonShinyPalette_Volbeat, PAL_ID_SHINY + SPECIES_VOLBEAT
-	obj_pal gMonShinyPalette_Illumise, PAL_ID_SHINY + SPECIES_ILLUMISE
-	obj_pal gMonShinyPalette_Lileep, PAL_ID_SHINY + SPECIES_LILEEP
-	obj_pal gMonShinyPalette_Cradily, PAL_ID_SHINY + SPECIES_CRADILY
-	obj_pal gMonShinyPalette_Anorith, PAL_ID_SHINY + SPECIES_ANORITH
-	obj_pal gMonShinyPalette_Armaldo, PAL_ID_SHINY + SPECIES_ARMALDO
-	obj_pal gMonShinyPalette_Ralts, PAL_ID_SHINY + SPECIES_RALTS
-	obj_pal gMonShinyPalette_Kirlia, PAL_ID_SHINY + SPECIES_KIRLIA
-	obj_pal gMonShinyPalette_Gardevoir, PAL_ID_SHINY + SPECIES_GARDEVOIR
-	obj_pal gMonShinyPalette_Bagon, PAL_ID_SHINY + SPECIES_BAGON
-	obj_pal gMonShinyPalette_Shelgon, PAL_ID_SHINY + SPECIES_SHELGON
-	obj_pal gMonShinyPalette_Salamence, PAL_ID_SHINY + SPECIES_SALAMENCE
-	obj_pal gMonShinyPalette_Beldum, PAL_ID_SHINY + SPECIES_BELDUM
-	obj_pal gMonShinyPalette_Metang, PAL_ID_SHINY + SPECIES_METANG
-	obj_pal gMonShinyPalette_Metagross, PAL_ID_SHINY + SPECIES_METAGROSS
-	obj_pal gMonShinyPalette_Regirock, PAL_ID_SHINY + SPECIES_REGIROCK
-	obj_pal gMonShinyPalette_Regice, PAL_ID_SHINY + SPECIES_REGICE
-	obj_pal gMonShinyPalette_Registeel, PAL_ID_SHINY + SPECIES_REGISTEEL
-	obj_pal gMonShinyPalette_Kyogre, PAL_ID_SHINY + SPECIES_KYOGRE
-	obj_pal gMonShinyPalette_Groudon, PAL_ID_SHINY + SPECIES_GROUDON
-	obj_pal gMonShinyPalette_Rayquaza, PAL_ID_SHINY + SPECIES_RAYQUAZA
-	obj_pal gMonShinyPalette_Latias, PAL_ID_SHINY + SPECIES_LATIAS
-	obj_pal gMonShinyPalette_Latios, PAL_ID_SHINY + SPECIES_LATIOS
-	obj_pal gMonShinyPalette_Jirachi, PAL_ID_SHINY + SPECIES_JIRACHI
-	obj_pal gMonShinyPalette_Deoxys, PAL_ID_SHINY + SPECIES_DEOXYS
-	obj_pal gMonShinyPalette_Chimecho, PAL_ID_SHINY + SPECIES_CHIMECHO
-	obj_pal gMonPalette_Egg, PAL_ID_SHINY + SPECIES_EGG
-	obj_pal gMonShinyPalette_Unown, PAL_ID_SHINY + SPECIES_UNOWN_B
-	obj_pal gMonShinyPalette_Unown, PAL_ID_SHINY + SPECIES_UNOWN_C
-	obj_pal gMonShinyPalette_Unown, PAL_ID_SHINY + SPECIES_UNOWN_D
-	obj_pal gMonShinyPalette_Unown, PAL_ID_SHINY + SPECIES_UNOWN_E
-	obj_pal gMonShinyPalette_Unown, PAL_ID_SHINY + SPECIES_UNOWN_F
-	obj_pal gMonShinyPalette_Unown, PAL_ID_SHINY + SPECIES_UNOWN_G
-	obj_pal gMonShinyPalette_Unown, PAL_ID_SHINY + SPECIES_UNOWN_H
-	obj_pal gMonShinyPalette_Unown, PAL_ID_SHINY + SPECIES_UNOWN_I
-	obj_pal gMonShinyPalette_Unown, PAL_ID_SHINY + SPECIES_UNOWN_J
-	obj_pal gMonShinyPalette_Unown, PAL_ID_SHINY + SPECIES_UNOWN_K
-	obj_pal gMonShinyPalette_Unown, PAL_ID_SHINY + SPECIES_UNOWN_L
-	obj_pal gMonShinyPalette_Unown, PAL_ID_SHINY + SPECIES_UNOWN_M
-	obj_pal gMonShinyPalette_Unown, PAL_ID_SHINY + SPECIES_UNOWN_N
-	obj_pal gMonShinyPalette_Unown, PAL_ID_SHINY + SPECIES_UNOWN_O
-	obj_pal gMonShinyPalette_Unown, PAL_ID_SHINY + SPECIES_UNOWN_P
-	obj_pal gMonShinyPalette_Unown, PAL_ID_SHINY + SPECIES_UNOWN_Q
-	obj_pal gMonShinyPalette_Unown, PAL_ID_SHINY + SPECIES_UNOWN_R
-	obj_pal gMonShinyPalette_Unown, PAL_ID_SHINY + SPECIES_UNOWN_S
-	obj_pal gMonShinyPalette_Unown, PAL_ID_SHINY + SPECIES_UNOWN_T
-	obj_pal gMonShinyPalette_Unown, PAL_ID_SHINY + SPECIES_UNOWN_U
-	obj_pal gMonShinyPalette_Unown, PAL_ID_SHINY + SPECIES_UNOWN_V
-	obj_pal gMonShinyPalette_Unown, PAL_ID_SHINY + SPECIES_UNOWN_W
-	obj_pal gMonShinyPalette_Unown, PAL_ID_SHINY + SPECIES_UNOWN_X
-	obj_pal gMonShinyPalette_Unown, PAL_ID_SHINY + SPECIES_UNOWN_Y
-	obj_pal gMonShinyPalette_Unown, PAL_ID_SHINY + SPECIES_UNOWN_Z
-	obj_pal gMonShinyPalette_Unown, PAL_ID_SHINY + SPECIES_UNOWN_EMARK
-	obj_pal gMonShinyPalette_Unown, PAL_ID_SHINY + SPECIES_UNOWN_QMARK
+gMonShinyPaletteTable::
+	.4byte gMonShinyPalette_Pokemon_000, 500
+	.4byte gMonShinyPalette_Chapebaya, 501
+	.4byte gMonShinyPalette_Denpecha, 502
+	.4byte gMonShinyPalette_Denfrota, 503
+	.4byte gMonShinyPalette_Coalchu, 504
+	.4byte gMonShinyPalette_Rallama, 505
+	.4byte gMonShinyPalette_Roellama, 506
+	.4byte gMonShinyPalette_Todad, 507
+	.4byte gMonShinyPalette_Shroad, 508
+	.4byte gMonShinyPalette_Bultoad, 509
+	.4byte gMonShinyPalette_Larvet, 510
+	.4byte gMonShinyPalette_Morfade, 511
+	.4byte gMonShinyPalette_Eyefly, 512
+	.4byte gMonShinyPalette_Drosofly, 513
+	.4byte gMonShinyPalette_Metagaster, 514
+	.4byte gMonShinyPalette_Phylafly, 515
+	.4byte gMonShinyPalette_Ornlil, 516
+	.4byte gMonShinyPalette_Wasoo, 517
+	.4byte gMonShinyPalette_Volateo, 518
+	.4byte gMonShinyPalette_Batoka, 519
+	.4byte gMonShinyPalette_Mouspid, 520
+	.4byte gMonShinyPalette_Turkur, 521
+	.4byte gMonShinyPalette_Peakur, 522
+	.4byte gMonShinyPalette_Chuk_Txu, 523
+	.4byte gMonShinyPalette_Leeckey, 524
+	.4byte gMonShinyPalette_Covolts, 525
+	.4byte gMonShinyPalette_Lucivots, 526
+	.4byte gMonShinyPalette_Nole, 527
+	.4byte gMonShinyPalette_Groundoe, 528
+	.4byte gMonShinyPalette_Urtiga, 529
+	.4byte gMonShinyPalette_Urtigere, 530
+	.4byte gMonShinyPalette_Venogena, 531
+	.4byte gMonShinyPalette_Urtigo, 532
+	.4byte gMonShinyPalette_Urtigoro, 533
+	.4byte gMonShinyPalette_Venogeno, 534
+	.4byte gMonShinyPalette_Amairi, 535
+	.4byte gMonShinyPalette_Ograiri, 536
+	.4byte gMonShinyPalette_Hormig, 537
+	.4byte gMonShinyPalette_Llamose, 538
+	.4byte gMonShinyPalette_Fatte, 539
+	.4byte gMonShinyPalette_Glotten, 540
+	.4byte gMonShinyPalette_Stulo, 541
+	.4byte gMonShinyPalette_Fungio, 542
+	.4byte gMonShinyPalette_Semilleto, 543
+	.4byte gMonShinyPalette_Flocepan, 544
+	.4byte gMonShinyPalette_Arquidea, 545
+	.4byte gMonShinyPalette_Streek, 546
+	.4byte gMonShinyPalette_Loggre, 547
+	.4byte gMonShinyPalette_Capritle, 548
+	.4byte gMonShinyPalette_Deeretle, 549
+	.4byte gMonShinyPalette_Armorito, 550
+	.4byte gMonShinyPalette_Armorazo, 551
+	.4byte gMonShinyPalette_Ankori, 552
+	.4byte gMonShinyPalette_Fureep, 553
+	.4byte gMonShinyPalette_Pulsul, 554
+	.4byte gMonShinyPalette_Koropul, 555
+	.4byte gMonShinyPalette_Darkoon, 556
+	.4byte gMonShinyPalette_Huntoon, 557
+	.4byte gMonShinyPalette_Tikika, 558
+	.4byte gMonShinyPalette_Tikiriki, 559
+	.4byte gMonShinyPalette_Poocher, 560
+	.4byte gMonShinyPalette_Wappy, 561
+	.4byte gMonShinyPalette_Riwoof, 562
+	.4byte gMonShinyPalette_Ivoro, 563
+	.4byte gMonShinyPalette_Dreamo, 564
+	.4byte gMonShinyPalette_Mammare, 565
+	.4byte gMonShinyPalette_Kango, 566
+	.4byte gMonShinyPalette_Kinboxo, 567
+	.4byte gMonShinyPalette_Punchzo, 568
+	.4byte gMonShinyPalette_Fentee, 569
+	.4byte gMonShinyPalette_Helento, 570
+	.4byte gMonShinyPalette_Felechoe, 571
+	.4byte gMonShinyPalette_Pikish, 572
+	.4byte gMonShinyPalette_Lionegosh, 573
+	.4byte gMonShinyPalette_Jonic, 574
+	.4byte gMonShinyPalette_Doric, 575
+	.4byte gMonShinyPalette_Corint, 576
+	.4byte gMonShinyPalette_Flachow, 577
+	.4byte gMonShinyPalette_Furning, 578
+	.4byte gMonShinyPalette_Crabix, 579
+	.4byte gMonShinyPalette_Dzoibix, 580
+	.4byte gMonShinyPalette_Spingen, 581
+	.4byte gMonShinyPalette_Duosgen, 582
+	.4byte gMonShinyPalette_Blahdalah, 583
+	.4byte gMonShinyPalette_Bubel, 584
+	.4byte gMonShinyPalette_Scentbird, 585
+	.4byte gMonShinyPalette_Norion, 586
+	.4byte gMonShinyPalette_Phantan, 587
+	.4byte gMonShinyPalette_Salama, 588
+	.4byte gMonShinyPalette_Mantiga, 589
+	.4byte gMonShinyPalette_Gallum, 590
+	.4byte gMonShinyPalette_Airdiv, 591
+	.4byte gMonShinyPalette_Gappy, 592
+	.4byte gMonShinyPalette_Ninnin, 593
+	.4byte gMonShinyPalette_Surhorn, 594
+	.4byte gMonShinyPalette_Shega, 595
+	.4byte gMonShinyPalette_Zeeco, 596
+	.4byte gMonShinyPalette_Psirilla, 597
+	.4byte gMonShinyPalette_Mechcrab, 598
+	.4byte gMonShinyPalette_Bobcrab, 599
+	.4byte gMonShinyPalette_Spiki, 600
+	.4byte gMonShinyPalette_Eliko, 601
+	.4byte gMonShinyPalette_Sespiral, 602
+	.4byte gMonShinyPalette_Dendriral, 603
+	.4byte gMonShinyPalette_Vugoo, 604
+	.4byte gMonShinyPalette_Monkoodu, 605
+	.4byte gMonShinyPalette_Klevalt, 606
+	.4byte gMonShinyPalette_Klesung, 607
+	.4byte gMonShinyPalette_Sikedonke, 608
+	.4byte gMonShinyPalette_Powergas, 609
+	.4byte gMonShinyPalette_Pasqall, 610
+	.4byte gMonShinyPalette_Rocorrodo, 611
+	.4byte gMonShinyPalette_Cornodro, 612
+	.4byte gMonShinyPalette_Karidari, 613
+	.4byte gMonShinyPalette_Captrunke, 614
+	.4byte gMonShinyPalette_Bankedon, 615
+	.4byte gMonShinyPalette_Plures, 616
+	.4byte gMonShinyPalette_Dracoon, 617
+	.4byte gMonShinyPalette_Piscy, 618
+	.4byte gMonShinyPalette_Dolphe, 619
+	.4byte gMonShinyPalette_Prawby, 620
+	.4byte gMonShinyPalette_Prawking, 621
+	.4byte gMonShinyPalette_Bethin, 622
+	.4byte gMonShinyPalette_Beetespuk, 623
+	.4byte gMonShinyPalette_Saximau, 624
+	.4byte gMonShinyPalette_Ektron, 625
+	.4byte gMonShinyPalette_Garsoom, 626
+	.4byte gMonShinyPalette_Tejemeje, 627
+	.4byte gMonShinyPalette_Furran, 628
+	.4byte gMonShinyPalette_Thundish, 629
+	.4byte gMonShinyPalette_Thundran, 630
+	.4byte gMonShinyPalette_Shacker, 631
+	.4byte gMonShinyPalette_Eyendy, 632
+	.4byte gMonShinyPalette_Cwabay, 633
+	.4byte gMonShinyPalette_Wetway, 634
+	.4byte gMonShinyPalette_Joylway, 635
+	.4byte gMonShinyPalette_Heatway, 636
+	.4byte gMonShinyPalette_Arbeluc, 637
+	.4byte gMonShinyPalette_Spiraulix, 638
+	.4byte gMonShinyPalette_Messaurix, 639
+	.4byte gMonShinyPalette_Fishix, 640
+	.4byte gMonShinyPalette_Cefasokix, 641
+	.4byte gMonShinyPalette_Beakodoron, 642
+	.4byte gMonShinyPalette_Boultan, 643
+	.4byte gMonShinyPalette_Bereuga, 644
+	.4byte gMonShinyPalette_Emethe, 645
+	.4byte gMonShinyPalette_Paratiki, 646
+	.4byte gMonShinyPalette_Mithedaon, 647
+	.4byte gMonShinyPalette_Whirldraon, 648
+	.4byte gMonShinyPalette_Migthdra, 649
+	.4byte gMonShinyPalette_Zengredse, 650
+	.4byte gMonShinyPalette_Wiami, 651
+	.4byte gMonShinyPalette_Potac, 652
+	.4byte gMonShinyPalette_Tubirato, 653
+	.4byte gMonShinyPalette_Ogritato, 654
+	.4byte gMonShinyPalette_Lavlon, 655
+	.4byte gMonShinyPalette_Magbol, 656
+	.4byte gMonShinyPalette_Canlava, 657
+	.4byte gMonShinyPalette_Shelldan, 658
+	.4byte gMonShinyPalette_Licka, 659
+	.4byte gMonShinyPalette_Tongrito, 660
+	.4byte gMonShinyPalette_Furbee, 661
+	.4byte gMonShinyPalette_Morkibia, 662
+	.4byte gMonShinyPalette_Kiwirawa, 663
+	.4byte gMonShinyPalette_Kiawariwa, 664
+	.4byte gMonShinyPalette_Bzby, 665
+	.4byte gMonShinyPalette_Kwimbee, 666
+	.4byte gMonShinyPalette_Verpillar, 667
+	.4byte gMonShinyPalette_Triworn, 668
+	.4byte gMonShinyPalette_Tostol, 669
+	.4byte gMonShinyPalette_Eloru, 670
+	.4byte gMonShinyPalette_Aenguile, 671
+	.4byte gMonShinyPalette_Gusvolts, 672
+	.4byte gMonShinyPalette_Airi, 673
+	.4byte gMonShinyPalette_Fookid, 674
+	.4byte gMonShinyPalette_Madnut, 675
+	.4byte gMonShinyPalette_Woodird, 676
+	.4byte gMonShinyPalette_Freion, 677
+	.4byte gMonShinyPalette_Coronneo, 678
+	.4byte gMonShinyPalette_Teamon, 679
+	.4byte gMonShinyPalette_Grasspark, 680
+	.4byte gMonShinyPalette_Sooregat, 681
+	.4byte gMonShinyPalette_Frucpao, 682
+	.4byte gMonShinyPalette_Beavon, 683
+	.4byte gMonShinyPalette_Umbeavella, 684
+	.4byte gMonShinyPalette_Coccnuto, 685
+	.4byte gMonShinyPalette_Pitdog, 686
+	.4byte gMonShinyPalette_Sproof, 687
+	.4byte gMonShinyPalette_Peatoof, 688
+	.4byte gMonShinyPalette_Ividigi, 689
+	.4byte gMonShinyPalette_Bongon, 690
+	.4byte gMonShinyPalette_Thinkower, 691
+	.4byte gMonShinyPalette_Flathinker, 692
+	.4byte gMonShinyPalette_Taermity, 693
+	.4byte gMonShinyPalette_Racevish, 694
+	.4byte gMonShinyPalette_Loddish, 695
+	.4byte gMonShinyPalette_Blosway, 696
+	.4byte gMonShinyPalette_Indinny, 697
+	.4byte gMonShinyPalette_Tankoo, 698
+	.4byte gMonShinyPalette_Craprax, 699
+	.4byte gMonShinyPalette_Magiken, 700
+	.4byte gMonShinyPalette_Cornscript, 701
+	.4byte gMonShinyPalette_Medrake, 702
+	.4byte gMonShinyPalette_Zhipo, 703
+	.4byte gMonShinyPalette_Moroberry, 704
+	.4byte gMonShinyPalette_Boongory, 705
+	.4byte gMonShinyPalette_Bludlop, 706
+	.4byte gMonShinyPalette_Vamkiri, 707
+	.4byte gMonShinyPalette_Shelcual, 708
+	.4byte gMonShinyPalette_Grecodale, 709
+	.4byte gMonShinyPalette_Alligrale, 710
+	.4byte gMonShinyPalette_Bellyo, 711
+	.4byte gMonShinyPalette_Drilluk, 712
+	.4byte gMonShinyPalette_Sangai, 713
+	.4byte gMonShinyPalette_Betal, 714
+	.4byte gMonShinyPalette_Deemp, 715
+	.4byte gMonShinyPalette_Trufkip, 716
+	.4byte gMonShinyPalette_Trufalo, 717
+	.4byte gMonShinyPalette_Burnco, 718
+	.4byte gMonShinyPalette_Flameco, 719
+	.4byte gMonShinyPalette_Hurgoose, 720
+	.4byte gMonShinyPalette_Donigoni, 721
+	.4byte gMonShinyPalette_Flysh, 722
+	.4byte gMonShinyPalette_Trodic, 723
+	.4byte gMonShinyPalette_Tidalo, 724
+	.4byte gMonShinyPalette_Polbear, 725
+	.4byte gMonShinyPalette_Arbatross, 726
+	.4byte gMonShinyPalette_Sneetchy, 727
+	.4byte gMonShinyPalette_Garedar, 728
+	.4byte gMonShinyPalette_Farizard, 729
+	.4byte gMonShinyPalette_Dralula, 730
+	.4byte gMonShinyPalette_Bernardog, 731
+	.4byte gMonShinyPalette_Rescudog, 732
+	.4byte gMonShinyPalette_Emrev, 733
+	.4byte gMonShinyPalette_Grazilla, 734
+	.4byte gMonShinyPalette_Ninjice, 735
+	.4byte gMonShinyPalette_Aztakle, 736
+	.4byte gMonShinyPalette_Chinnakle, 737
+	.4byte gMonShinyPalette_Jarximaux, 738
+	.4byte gMonShinyPalette_Etod, 739
+	.4byte gMonShinyPalette_Tarsony, 740
+	.4byte gMonShinyPalette_Gurtan, 741
+	.4byte gMonShinyPalette_Conqari, 742
+	.4byte gMonShinyPalette_Titatoad, 743
+	.4byte gMonShinyPalette_Titafrota, 744
+	.4byte gMonShinyPalette_Titallama, 745
+	.4byte gMonShinyPalette_Crogronk, 746
+	.4byte gMonShinyPalette_Skankrin, 747
+	.4byte gMonShinyPalette_Baestalix, 748
+	.4byte gMonShinyPalette_Vivaczo, 749
+	.4byte gMonShinyPalette_Shaddire, 750
+	.4byte gMonShinyPalette_Mothatura, 751
+	.4byte gMonShinyPalette_Pokemon_252, 752
+	.4byte gMonShinyPalette_Pokemon_253, 753
+	.4byte gMonShinyPalette_Pokemon_254, 754
+	.4byte gMonShinyPalette_Pokemon_255, 755
+	.4byte gMonShinyPalette_Pokemon_256, 756
+	.4byte gMonShinyPalette_Pokemon_257, 757
+	.4byte gMonShinyPalette_Pokemon_258, 758
+	.4byte gMonShinyPalette_Pokemon_259, 759
+	.4byte gMonShinyPalette_Pokemon_260, 760
+	.4byte gMonShinyPalette_Pokemon_261, 761
+	.4byte gMonShinyPalette_Pokemon_262, 762
+	.4byte gMonShinyPalette_Pokemon_263, 763
+	.4byte gMonShinyPalette_Pokemon_264, 764
+	.4byte gMonShinyPalette_Pokemon_265, 765
+	.4byte gMonShinyPalette_Pokemon_266, 766
+	.4byte gMonShinyPalette_Pokemon_267, 767
+	.4byte gMonShinyPalette_Pokemon_268, 768
+	.4byte gMonShinyPalette_Pokemon_269, 769
+	.4byte gMonShinyPalette_Pokemon_270, 770
+	.4byte gMonShinyPalette_Pokemon_271, 771
+	.4byte gMonShinyPalette_Pokemon_272, 772
+	.4byte gMonShinyPalette_Pokemon_273, 773
+	.4byte gMonShinyPalette_Pokemon_274, 774
+	.4byte gMonShinyPalette_Pokemon_275, 775
+	.4byte gMonShinyPalette_Pokemon_276, 776
+	.4byte gMonShinyPalette_Seegg, 777
+	.4byte gMonShinyPalette_Flowaby, 778
+	.4byte gMonShinyPalette_Jardino, 779
+	.4byte gMonShinyPalette_Firegg, 780
+	.4byte gMonShinyPalette_Embaby, 781
+	.4byte gMonShinyPalette_Tyradino, 782
+	.4byte gMonShinyPalette_Aquegg, 783
+	.4byte gMonShinyPalette_Ornaby, 784
+	.4byte gMonShinyPalette_Oceadino, 785
+	.4byte gMonShinyPalette_Sever, 786
+	.4byte gMonShinyPalette_Ayewiraz, 787
+	.4byte gMonShinyPalette_Squirriti, 788
+	.4byte gMonShinyPalette_Acornel, 789
+	.4byte gMonShinyPalette_Larvly, 790
+	.4byte gMonShinyPalette_Cricoon, 791
+	.4byte gMonShinyPalette_Cricrit, 792
+	.4byte gMonShinyPalette_Composcoon, 793
+	.4byte gMonShinyPalette_Flynfly, 794
+	.4byte gMonShinyPalette_Weedo, 795
+	.4byte gMonShinyPalette_Flosea, 796
+	.4byte gMonShinyPalette_Weedalgu, 797
+	.4byte gMonShinyPalette_Cactino, 798
+	.4byte gMonShinyPalette_Cacutu, 799
+	.4byte gMonShinyPalette_Dessertea, 800
+	.4byte gMonShinyPalette_Gustano, 801
+	.4byte gMonShinyPalette_Duostano, 802
+	.4byte gMonShinyPalette_Phico, 803
+	.4byte gMonShinyPalette_Reabari, 804
+	.4byte gMonShinyPalette_Ruycantor, 805
+	.4byte gMonShinyPalette_Strawbaya, 806
+	.4byte gMonShinyPalette_Dendrock, 807
+	.4byte gMonShinyPalette_Bounny, 808
+	.4byte gMonShinyPalette_Bolichano, 809
+	.4byte gMonShinyPalette_Pelichen, 810
+	.4byte gMonShinyPalette_Hovebug, 811
+	.4byte gMonShinyPalette_Planebug, 812
+	.4byte gMonShinyPalette_Colossio, 813
+	.4byte gMonShinyPalette_Descomune, 814
+	.4byte gMonShinyPalette_Babos, 815
+	.4byte gMonShinyPalette_Osoe, 816
+	.4byte gMonShinyPalette_Mimikat, 817
+	.4byte gMonShinyPalette_Goduck, 818
+	.4byte gMonShinyPalette_Dukamid, 819
+	.4byte gMonShinyPalette_Deprip, 820
+	.4byte gMonShinyPalette_Coalchar, 821
+	.4byte gMonShinyPalette_Fatube, 822
+	.4byte gMonShinyPalette_Soie, 823
+	.4byte gMonShinyPalette_Corongori, 824
+	.4byte gMonShinyPalette_Tincrab, 825
+	.4byte gMonShinyPalette_Searoket, 826
+	.4byte gMonShinyPalette_Helixet, 827
+	.4byte gMonShinyPalette_Icish, 828
+	.4byte gMonShinyPalette_Freech, 829
+	.4byte gMonShinyPalette_Awhol, 830
+	.4byte gMonShinyPalette_Whola, 831
+	.4byte gMonShinyPalette_Progon, 832
+	.4byte gMonShinyPalette_Rubygon, 833
+	.4byte gMonShinyPalette_Saphiregon, 834
+	.4byte gMonShinyPalette_Energiz, 835
+	.4byte gMonShinyPalette_Musclelc, 836
+	.4byte gMonShinyPalette_Plug_Oink, 837
+	.4byte gMonShinyPalette_Spig, 838
+	.4byte gMonShinyPalette_Llamayama, 839
+	.4byte gMonShinyPalette_Chimneyama, 840
+	.4byte gMonShinyPalette_Coldchick, 841
+	.4byte gMonShinyPalette_Freezock, 842
+	.4byte gMonShinyPalette_Cottoster, 843
+	.4byte gMonShinyPalette_Apinep, 844
+	.4byte gMonShinyPalette_Pinark, 845
+	.4byte gMonShinyPalette_Spinwing, 846
+	.4byte gMonShinyPalette_Bobeguin, 847
+	.4byte gMonShinyPalette_Clostar, 848
+	.4byte gMonShinyPalette_Stargo, 849
+	.4byte gMonShinyPalette_Beavy, 850
+	.4byte gMonShinyPalette_Tigat, 851
+	.4byte gMonShinyPalette_Tigator, 852
+	.4byte gMonShinyPalette_Amede, 853
+	.4byte gMonShinyPalette_Amedi, 854
+	.4byte gMonShinyPalette_Hooley, 855
+	.4byte gMonShinyPalette_Mindum, 856
+	.4byte gMonShinyPalette_Minadoom, 857
+	.4byte gMonShinyPalette_Jackan, 858
+	.4byte gMonShinyPalette_Lotbird, 859
+	.4byte gMonShinyPalette_Boguon, 860
+	.4byte gMonShinyPalette_Guinette, 861
+	.4byte gMonShinyPalette_Woopet, 862
+	.4byte gMonShinyPalette_Fairoot, 863
+	.4byte gMonShinyPalette_Ronslept, 864
+	.4byte gMonShinyPalette_Leirao, 865
+	.4byte gMonShinyPalette_Dorliron, 866
+	.4byte gMonShinyPalette_Simpleon, 867
+	.4byte gMonShinyPalette_Dobleon, 868
+	.4byte gMonShinyPalette_Liofang, 869
+	.4byte gMonShinyPalette_Tynigon, 870
+	.4byte gMonShinyPalette_Balagon, 871
+	.4byte gMonShinyPalette_Iguagon, 872
+	.4byte gMonShinyPalette_Berchi, 873
+	.4byte gMonShinyPalette_Mejiyonson, 874
+	.4byte gMonShinyPalette_Loapa, 875
+	.4byte gMonShinyPalette_Agoir, 876
+	.4byte gMonShinyPalette_Catalon, 877
+	.4byte gMonShinyPalette_Mazalon, 878
+	.4byte gMonShinyPalette_Onike, 879
+	.4byte gMonShinyPalette_Copycatte, 880
+	.4byte gMonShinyPalette_Monkoor, 881
+	.4byte gMonShinyPalette_Opail, 882
+	.4byte gMonShinyPalette_Hompalon, 883
+	.4byte gMonShinyPalette_Gemmal, 884
+	.4byte gMonShinyPalette_Kotokabe, 885
+	.4byte gMonShinyPalette_Armay, 886
+	.4byte gMonShinyPalette_Armstorm, 887
+	.4byte gMonShinyPalette_Torido, 888
+	.4byte gMonShinyPalette_Dotori, 889
+	.4byte gMonShinyPalette_Enyendrode, 890
+	.4byte gMonShinyPalette_Mongostre, 891
+	.4byte gMonShinyPalette_Hamet, 892
+	.4byte gMonShinyPalette_Ratelo, 893
+	.4byte gMonShinyPalette_Psimouse, 894
+	.4byte gMonShinyPalette_Dristal, 895
+	.4byte gMonShinyPalette_Feegon, 896
+	.4byte gMonShinyPalette_Drahago, 897
+	.4byte gMonShinyPalette_Tenry, 898
+	.4byte gMonShinyPalette_Wrestoro, 899
+	.4byte gMonShinyPalette_Wrestmilk, 900
+	.4byte gMonShinyPalette_Molebas, 901
+	.4byte gMonShinyPalette_Dugobas, 902
+	.4byte gMonShinyPalette_Lapibas, 903
+	.4byte gMonShinyPalette_Kaomare, 904
+	.4byte gMonShinyPalette_Kaosune, 905
+	.4byte gMonShinyPalette_Peezgal, 906
+	.4byte gMonShinyPalette_Ordkip, 907
+	.4byte gMonShinyPalette_Tanord, 908
+	.4byte gMonShinyPalette_Karendi, 909
+	.4byte gMonShinyPalette_Garotao, 910
+	.4byte gMonShinyPalette_Gritespec, 911

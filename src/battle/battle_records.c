@@ -8,8 +8,34 @@
 #include "strings2.h"
 #include "trainer_card.h"
 
+struct DebugStruct1
+{
+    u16 var0;
+    u8 var1[10];
+};
+
 extern struct LinkPlayerMapObject gLinkPlayerMapObjects[4];
 extern u8 gBattleOutcome;
+
+#if DEBUG
+const struct DebugStruct1 gUnknown_Debug_4245CC[] =
+{
+    { 1, _("NUMBER1") },
+    { 2, _("ナンバー2") },
+    { 3, _("ナンバー3") },
+    { 4, _("ナンバー4") },
+    { 5, _("ナンバー5") },
+    { 6, _("ナンバー6") },
+    { 7, _("ナンバー7") },
+};
+
+const struct {u8 unk0; u8 unk1;} gUnknown_Debug_8424620[] =
+{
+    { 1, 1 },
+    { 2, 1 },
+    { 3, 1 },
+};
+#endif
 
 static void InitLinkBattleRecord(struct LinkBattleRecord *record)
 {
@@ -38,7 +64,7 @@ static int GetLinkBattleRecordTotalBattles(struct LinkBattleRecord *record)
     return record->wins + record->losses + record->draws;
 }
 
-static int FindLinkBattleRecord(struct LinkBattleRecord *records, u8 *name, u16 trainerId)
+static int FindLinkBattleRecord(struct LinkBattleRecord *records, const u8 *name, u16 trainerId)
 {
     int i;
 
@@ -119,7 +145,7 @@ static void UpdateLinkBattleGameStats(int battleOutcome)
         IncrementGameStat(stat);
 }
 
-static void UpdateLinkBattleRecords_(struct LinkBattleRecord *records, u8 *name, u16 trainerId, int battleOutcome, u8 language)
+static void UpdateLinkBattleRecords_(struct LinkBattleRecord *records, const u8 *name, u16 trainerId, int battleOutcome, u8 language)
 {
     int index;
     UpdateLinkBattleGameStats(battleOutcome);
@@ -197,12 +223,32 @@ void UpdateLinkBattleRecords(int id)
         gLinkPlayers[gLinkPlayerMapObjects[id].linkPlayerId].language);
 }
 
+#if DEBUG
+void debug_sub_81257E0(void)
+{
+    u32 i;
+
+    InitLinkBattleRecords();
+    for (i = 0; i < 3; i++)
+    {
+        u32 id = gUnknown_Debug_8424620[i].unk0 - 1;
+
+        UpdateLinkBattleRecords_(
+            gSaveBlock1.linkBattleRecords,
+            gUnknown_Debug_4245CC[id].var1,
+            gUnknown_Debug_4245CC[id].var0,
+            gUnknown_Debug_8424620[i].unk1,
+            gLinkPlayers[gLinkPlayerMapObjects[id].linkPlayerId].language);
+    }
+}
+#endif
+
 static void PrintLinkBattleWinsLossesDraws(struct LinkBattleRecord *records)
 {
     ConvertIntToDecimalStringN_DigitWidth6(gStringVar1, GetGameStat(GAME_STAT_LINK_BATTLE_WINS), STR_CONV_MODE_RIGHT_ALIGN, 4);
     ConvertIntToDecimalStringN_DigitWidth6(gStringVar2, GetGameStat(GAME_STAT_LINK_BATTLE_LOSSES), STR_CONV_MODE_RIGHT_ALIGN, 4);
     ConvertIntToDecimalStringN_DigitWidth6(gStringVar3, GetGameStat(GAME_STAT_LINK_BATTLE_DRAWS), STR_CONV_MODE_RIGHT_ALIGN, 4);
-    MenuPrint(gOtherText_WinRecord, 3, 3);
+    Menu_PrintText(gOtherText_WinRecord, 3, 3);
 }
 
 static void PrintLinkBattleRecord(struct LinkBattleRecord *record, u8 y)
@@ -217,39 +263,40 @@ static void PrintLinkBattleRecord(struct LinkBattleRecord *record, u8 y)
         buffer[4] = 0x11;
         buffer[5] = 1;
         StringCopy(buffer + 6, gOtherText_SevenDashes);
-        MenuPrint(buffer, 3, y);
+        Menu_PrintText(buffer, 3, y);
         StringCopy(buffer + 6, gOtherText_FourDashes);
-        MenuPrint(buffer, 11, y);
-        MenuPrint(buffer, 17, y);
-        MenuPrint(buffer, 23, y);
+        Menu_PrintText(buffer, 11, y);
+        Menu_PrintText(buffer, 17, y);
+        Menu_PrintText(buffer, 23, y);
     }
     else
     {
         StringFillWithTerminator(gStringVar1, 8);
         StringCopyN(gStringVar1, record->name, 7);
-        MenuPrint(gStringVar1, 3, y);
+        Menu_PrintText(gStringVar1, 3, y);
         gStringVar1[0] = EXT_CTRL_CODE_BEGIN;
         gStringVar1[1] = 0x14;
         gStringVar1[2] = 6;
         ConvertIntToDecimalStringN(gStringVar1 + 3, record->wins, STR_CONV_MODE_RIGHT_ALIGN, 4);
-        MenuPrint(gStringVar1, 11, y);
+        Menu_PrintText(gStringVar1, 11, y);
         ConvertIntToDecimalStringN(gStringVar1 + 3, record->losses, STR_CONV_MODE_RIGHT_ALIGN, 4);
-        MenuPrint(gStringVar1, 17, y);
+        Menu_PrintText(gStringVar1, 17, y);
         ConvertIntToDecimalStringN(gStringVar1 + 3, record->draws, STR_CONV_MODE_RIGHT_ALIGN, 4);
-        MenuPrint(gStringVar1, 23, y);
+        Menu_PrintText(gStringVar1, 23, y);
     }
 }
 
-void ShowLinkBattleRecords(void) {
+void ShowLinkBattleRecords(void)
+{
     s32 i;
-    MenuDrawTextWindow(1, 0, 28, 18);
+    Menu_DrawStdWindowFrame(1, 0, 28, 18);
     sub_8072BD8(gOtherText_BattleResults, 0, 1, 240);
 
     PrintLinkBattleWinsLossesDraws(gSaveBlock1.linkBattleRecords);
 #if ENGLISH
-    MenuPrint(gOtherText_WinLoseDraw, 12, 6);
+    Menu_PrintText(gOtherText_WinLoseDraw, 12, 6);
 #elif GERMAN
-    MenuPrint_PixelCoords(gOtherText_WinLoseDraw, 88, 48, 1);
+    Menu_PrintTextPixelCoords(gOtherText_WinLoseDraw, 88, 48, 1);
 #endif
 
     for (i = 0; i < 5; i++)
@@ -285,11 +332,11 @@ static bool32 sub_8110494(u8 level)
 
 static void PrintWinStreak(const u8 *str, u16 streak, u8 left, u8 top)
 {
-    MenuPrint(str, left, top);
+    Menu_PrintText(str, left, top);
     if (streak > 9999)
         streak = 9999;
     sub_8072C14(gStringVar1, streak, 24, 1);
-    MenuPrint(gOtherText_WinStreak, left + 7, top);
+    Menu_PrintText(gOtherText_WinStreak, left + 7, top);
 }
 
 static void PrintRecordWinStreak(u8 level, u8 left, u8 top)
@@ -320,10 +367,10 @@ static void PrintLastWinStreak(u8 level, u8 left, u8 top)
 void ShowBattleTowerRecords(void)
 {
     u16 i;
-    MenuDrawTextWindow(3, 1, 27, 17);
+    Menu_DrawStdWindowFrame(3, 1, 27, 17);
     sub_8072BD8(gOtherText_BattleTowerResults, 3, 2, 0xC8);
-    MenuPrint(gOtherText_Lv50, 5, 6);
-    MenuPrint(gOtherText_Lv100, 5, 12);
+    Menu_PrintText(gOtherText_Lv50, 5, 6);
+    Menu_PrintText(gOtherText_Lv100, 5, 12);
     for (i = 5; i < 26; i++)
     {
         sub_8071F60(CHAR_HYPHEN, i, 10);

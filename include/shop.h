@@ -17,10 +17,18 @@ enum
     ANIM_NUM
 };
 
+// shop options
+enum
+{
+    SHOP_BUY,
+    SHOP_SELL,
+    SHOP_EXIT
+};
+
 struct MartInfo
 {
     /* 0x0 */ void (* callback) (void);
-    /* 0x4 */ u16 *itemList;
+    /* 0x4 */ const u16 *itemList;
     /* 0x8 */ u8 itemCount; // how many unique items are there for sale?
     /* 0x9 */ u8 cursor; // this shows the on-screen true index of the cursor and not the current item selected.
     /* 0xA */ u8 numChoices; // how many options does the mart have? can be either 2 or 1 (BUY/SELL vs BUY)
@@ -29,20 +37,9 @@ struct MartInfo
     /* 0xD */ u8 curItemCount; // if you are selling an item, this is the count of the current item stack you have.
 };
 
-void sub_80B2E38(u8);
-void HandleShopMenuQuit(u8);
-void sub_80B2FA0(u8);
-void BuyMenuDrawGraphics(void);
-void sub_80B3240(void);
-void sub_80B3270(void);
-void BuyMenuDrawMapGraphics(void);
-void sub_80B3764(int, int);
-void sub_80B37EC(void);
-void sub_80B40E8(u8);
-void CreatePokemartMenu(u16 *);
-void CreateDecorationShop1Menu(u16 *);
-void CreateDecorationShop2Menu(u16 *);
-void sub_80B356C(void);
-void sub_80B368C(void);
+void Shop_CreatePokemartMenu(u16 *);
+void Shop_CreateDecorationShop1Menu(u16 *);
+void Shop_CreateDecorationShop2Menu(u16 *);
+void Shop_RunExitSellMenuTask(u8 taskId);
 
 #endif // GUARD_SHOP_H

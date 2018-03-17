@@ -1,5 +1,5 @@
 	.include "constants/gba_constants.inc"
-	.include "asm/macros.inc"
+	.include "include/macros.inc"
 
 	.syntax unified
 
@@ -12,7 +12,7 @@ sub_80DDB6C: @ 80DDB6C
 	push {r4,r5,lr}
 	adds r4, r0, 0
 	movs r1, 0x1
-	bl sub_80787B0
+	bl InitAnimSpritePos
 	ldr r0, _080DDBC8 @ =gBattleAnimArgs
 	ldrh r0, [r0, 0x4]
 	strh r0, [r4, 0x2E]
@@ -63,7 +63,7 @@ sub_80DDBD8: @ 80DDBD8
 	adds r4, r0, 0
 	bl sub_80DDCC8
 	adds r0, r4, 0
-	bl sub_8078B5C
+	bl TranslateAnimSpriteByDeltas
 	lsls r0, 24
 	cmp r0, 0
 	beq _080DDBF8
@@ -123,7 +123,7 @@ sub_80DDC4C: @ 80DDC4C
 	movs r0, 0x1
 	strh r0, [r4, 0x2E]
 	adds r0, r4, 0
-	bl sub_8078B5C
+	bl TranslateAnimSpriteByDeltas
 	movs r1, 0x38
 	ldrsh r0, [r4, r1]
 	movs r1, 0xA
@@ -1334,7 +1334,7 @@ _080DE584:
 _080DE59C:
 	movs r2, 0x2
 	movs r3, 0x6
-	bl sub_8089944
+	bl ScanlineEffect_InitWave
 	lsls r0, 24
 	lsrs r0, 24
 	strh r0, [r5, 0x1C]
@@ -1507,7 +1507,7 @@ _080DE6E8:
 	beq _080DE740
 	b _080DE7AA
 _080DE6EE:
-	ldr r1, _080DE710 @ =gUnknown_03004DC0
+	ldr r1, _080DE710 @ =gScanlineEffect
 	movs r0, 0x3
 	strb r0, [r1, 0x15]
 	movs r0, 0x1
@@ -1523,7 +1523,7 @@ _080DE6EE:
 	ldr r0, _080DE714 @ =0x0000fdff
 	b _080DE720
 	.align 2, 0
-_080DE710: .4byte gUnknown_03004DC0
+_080DE710: .4byte gScanlineEffect
 _080DE714: .4byte 0x0000fdff
 _080DE718:
 	movs r2, 0x80
@@ -2539,7 +2539,7 @@ sub_80DEF3C: @ 80DEF3C
 	push {r4,lr}
 	adds r4, r0, 0
 	movs r1, 0x1
-	bl sub_80787B0
+	bl InitAnimSpritePos
 	ldr r0, _080DEF68 @ =gAnimBankAttacker
 	ldrb r0, [r0]
 	bl GetBankSide
@@ -3257,7 +3257,7 @@ sub_80DF49C: @ 80DF49C
 	movs r2, 0x4
 	orrs r1, r2
 	strb r1, [r3]
-	ldr r2, _080DF4E0 @ =gObjectBankIDs
+	ldr r2, _080DF4E0 @ =gBankSpriteIds
 	ldr r1, _080DF4E4 @ =gAnimBankAttacker
 	ldrb r1, [r1]
 	adds r1, r2
@@ -3286,7 +3286,7 @@ sub_80DF49C: @ 80DF49C
 	strh r1, [r0, 0x22]
 	bx lr
 	.align 2, 0
-_080DF4E0: .4byte gObjectBankIDs
+_080DF4E0: .4byte gBankSpriteIds
 _080DF4E4: .4byte gAnimBankAttacker
 _080DF4E8: .4byte gBattleAnimArgs
 _080DF4EC: .4byte sub_80DF4F4

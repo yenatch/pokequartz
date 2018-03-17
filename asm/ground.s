@@ -1,5 +1,5 @@
 	.include "constants/gba_constants.inc"
-	.include "asm/macros.inc"
+	.include "include/macros.inc"
 
 	.syntax unified
 
@@ -59,7 +59,7 @@ _080E0F80: .4byte sub_80E0F84
 sub_80E0F84: @ 80E0F84
 	push {r4,r5,lr}
 	adds r5, r0, 0
-	bl sub_8078718
+	bl TranslateAnimSpriteLinearAndSine
 	lsls r0, 24
 	cmp r0, 0
 	beq _080E0FD8
@@ -108,7 +108,7 @@ _080E0FE4: .4byte sub_80E0FE8
 sub_80E0FE8: @ 80E0FE8
 	push {r4,lr}
 	adds r4, r0, 0
-	bl sub_8078718
+	bl TranslateAnimSpriteLinearAndSine
 	lsls r0, 24
 	cmp r0, 0
 	beq _080E0FFC
@@ -157,7 +157,7 @@ _080E1024:
 	ldrh r4, [r4, 0x6]
 	adds r0, r4
 	strh r0, [r6, 0x36]
-	ldr r0, _080E1070 @ =sub_8078B34
+	ldr r0, _080E1070 @ =StartTranslateAnimSpriteByDeltas
 	str r0, [r6, 0x1C]
 	ldr r1, _080E1074 @ =DestroyAnimSprite
 	adds r0, r6, 0
@@ -169,7 +169,7 @@ _080E1024:
 _080E1064: .4byte gAnimBankAttacker
 _080E1068: .4byte gBattleAnimArgs
 _080E106C: .4byte gAnimBankTarget
-_080E1070: .4byte sub_8078B34
+_080E1070: .4byte StartTranslateAnimSpriteByDeltas
 _080E1074: .4byte DestroyAnimSprite
 	thumb_func_end sub_80E1004
 
@@ -180,7 +180,7 @@ sub_80E1078: @ 80E1078
 	push {r7}
 	adds r6, r0, 0
 	movs r1, 0x1
-	bl sub_80787B0
+	bl InitAnimSpritePos
 	ldr r4, _080E10F8 @ =gAnimBankTarget
 	ldrb r0, [r4]
 	movs r1, 0x2
@@ -224,7 +224,7 @@ _080E10D0:
 	strh r0, [r6, 0x32]
 	adds r0, r7, r4
 	strh r0, [r6, 0x36]
-	ldr r0, _080E1100 @ =sub_8078B34
+	ldr r0, _080E1100 @ =StartTranslateAnimSpriteByDeltas
 	str r0, [r6, 0x1C]
 	ldr r1, _080E1104 @ =move_anim_8074EE0
 	adds r0, r6, 0
@@ -237,7 +237,7 @@ _080E10D0:
 	.align 2, 0
 _080E10F8: .4byte gAnimBankTarget
 _080E10FC: .4byte gBattleAnimArgs
-_080E1100: .4byte sub_8078B34
+_080E1100: .4byte StartTranslateAnimSpriteByDeltas
 _080E1104: .4byte move_anim_8074EE0
 	thumb_func_end sub_80E1078
 
@@ -631,7 +631,7 @@ _080E13D6:
 _080E13F8: .4byte gBattle_BG2_Y
 _080E13FC: .4byte gSprites
 _080E1400:
-	ldr r1, _080E1410 @ =gUnknown_03004DC0
+	ldr r1, _080E1410 @ =gScanlineEffect
 	movs r0, 0x3
 	strb r0, [r1, 0x15]
 _080E1406:
@@ -640,7 +640,7 @@ _080E1406:
 	strh r0, [r4, 0x8]
 	b _080E1432
 	.align 2, 0
-_080E1410: .4byte gUnknown_03004DC0
+_080E1410: .4byte gScanlineEffect
 _080E1414:
 	adds r0, r2, 0
 	bl DestroyAnimVisualTask
@@ -925,7 +925,7 @@ _080E161C:
 	ldrsh r0, [r0, r1]
 	cmp r0, 0
 	bne _080E1662
-	ldr r1, _080E1658 @ =gUnknown_03004DC0
+	ldr r1, _080E1658 @ =gScanlineEffect
 	movs r0, 0x3
 	strb r0, [r1, 0x15]
 _080E164A:
@@ -935,7 +935,7 @@ _080E164A:
 	b _080E1662
 	.align 2, 0
 _080E1654: .4byte gSprites
-_080E1658: .4byte gUnknown_03004DC0
+_080E1658: .4byte gScanlineEffect
 _080E165C:
 	adds r0, r2, 0
 	bl DestroyAnimVisualTask
@@ -980,7 +980,7 @@ _080E169C:
 	asrs r4, r0, 16
 	cmp r2, r0
 	bge _080E16C8
-	ldr r5, _080E1720 @ =gUnknown_03004DE0
+	ldr r5, _080E1720 @ =gScanlineEffectRegBuffers
 	movs r0, 0xF0
 	lsls r0, 3
 	adds r6, r5, r0
@@ -1003,7 +1003,7 @@ _080E16C8:
 	asrs r0, r1, 16
 	cmp r0, 0x9F
 	bgt _080E16F6
-	ldr r4, _080E1720 @ =gUnknown_03004DE0
+	ldr r4, _080E1720 @ =gScanlineEffectRegBuffers
 	lsls r0, r3, 16
 	asrs r0, 16
 	adds r3, r0, 0
@@ -1035,7 +1035,7 @@ _080E16F6:
 	ldr r0, [sp]
 	ldr r1, [sp, 0x4]
 	ldr r2, [sp, 0x8]
-	bl sub_80895F8
+	bl ScanlineEffect_SetParams
 	add sp, 0xC
 	pop {r4-r6}
 	pop {r0}
@@ -1043,7 +1043,7 @@ _080E16F6:
 	.align 2, 0
 _080E1718: .4byte gBattle_BG2_X
 _080E171C: .4byte REG_BG2HOFS
-_080E1720: .4byte gUnknown_03004DE0
+_080E1720: .4byte gScanlineEffectRegBuffers
 _080E1724: .4byte 0xa2600001
 	thumb_func_end sub_80E1668
 
@@ -1120,7 +1120,7 @@ _080E17AC: .4byte sub_80E17B0
 sub_80E17B0: @ 80E17B0
 	push {r4,lr}
 	adds r4, r0, 0
-	bl sub_8078718
+	bl TranslateAnimSpriteLinearAndSine
 	lsls r0, 24
 	cmp r0, 0
 	beq _080E17C4
@@ -1243,14 +1243,14 @@ _080E189C:
 	beq _080E18C8
 	cmp r0, 0x5
 	bne _080E1908
-	ldr r0, _080E18C0 @ =gUnknown_030041B0
+	ldr r0, _080E18C0 @ =gBattle_BG3_X
 	ldrh r0, [r0]
 	strh r0, [r4, 0x22]
 	ldr r0, _080E18C4 @ =sub_80E1934
 	b _080E1926
 	.align 2, 0
 _080E18BC: .4byte gAnimMovePower
-_080E18C0: .4byte gUnknown_030041B0
+_080E18C0: .4byte gBattle_BG3_X
 _080E18C4: .4byte sub_80E1934
 _080E18C8:
 	movs r0, 0
@@ -1270,7 +1270,7 @@ _080E18CE:
 	adds r1, r4, 0
 	adds r1, 0x8
 	adds r1, r0
-	ldr r0, _080E1904 @ =gObjectBankIDs
+	ldr r0, _080E1904 @ =gBankSpriteIds
 	adds r0, r5, r0
 	ldrb r0, [r0]
 	strh r0, [r1]
@@ -1285,7 +1285,7 @@ _080E18F8:
 	bls _080E18CE
 	b _080E1924
 	.align 2, 0
-_080E1904: .4byte gObjectBankIDs
+_080E1904: .4byte gBankSpriteIds
 _080E1908:
 	ldrb r0, [r6]
 	bl GetAnimBankSpriteId
@@ -1351,16 +1351,16 @@ _080E1962:
 	ands r0, r1
 	cmp r0, 0
 	bne _080E198C
-	ldr r1, _080E1988 @ =gUnknown_030041B0
+	ldr r1, _080E1988 @ =gBattle_BG3_X
 	ldrh r0, [r3, 0x26]
 	ldrh r2, [r3, 0x22]
 	adds r0, r2
 	strh r0, [r1]
 	b _080E1996
 	.align 2, 0
-_080E1988: .4byte gUnknown_030041B0
+_080E1988: .4byte gBattle_BG3_X
 _080E198C:
-	ldr r0, _080E19B4 @ =gUnknown_030041B0
+	ldr r0, _080E19B4 @ =gBattle_BG3_X
 	ldrh r1, [r3, 0x22]
 	ldrh r2, [r3, 0x26]
 	subs r1, r2
@@ -1382,7 +1382,7 @@ _080E1996:
 	strh r0, [r3, 0x24]
 	b _080E1A0C
 	.align 2, 0
-_080E19B4: .4byte gUnknown_030041B0
+_080E19B4: .4byte gBattle_BG3_X
 _080E19B8:
 	ldrh r0, [r3, 0xA]
 	adds r0, 0x1
@@ -1397,16 +1397,16 @@ _080E19B8:
 	ands r1, r0
 	cmp r1, 0
 	bne _080E19E4
-	ldr r1, _080E19E0 @ =gUnknown_030041B0
+	ldr r1, _080E19E0 @ =gBattle_BG3_X
 	ldrh r0, [r3, 0x24]
 	ldrh r2, [r3, 0x22]
 	adds r0, r2
 	strh r0, [r1]
 	b _080E19EE
 	.align 2, 0
-_080E19E0: .4byte gUnknown_030041B0
+_080E19E0: .4byte gBattle_BG3_X
 _080E19E4:
-	ldr r0, _080E1A14 @ =gUnknown_030041B0
+	ldr r0, _080E1A14 @ =gBattle_BG3_X
 	ldrh r1, [r3, 0x22]
 	ldrh r2, [r3, 0x24]
 	subs r1, r2
@@ -1433,9 +1433,9 @@ _080E1A0C:
 	strh r0, [r3, 0x8]
 	b _080E1A24
 	.align 2, 0
-_080E1A14: .4byte gUnknown_030041B0
+_080E1A14: .4byte gBattle_BG3_X
 _080E1A18:
-	ldr r1, _080E1A28 @ =gUnknown_030041B0
+	ldr r1, _080E1A28 @ =gBattle_BG3_X
 	ldrh r0, [r3, 0x22]
 	strh r0, [r1]
 	adds r0, r2, 0
@@ -1444,7 +1444,7 @@ _080E1A24:
 	pop {r0}
 	bx r0
 	.align 2, 0
-_080E1A28: .4byte gUnknown_030041B0
+_080E1A28: .4byte gBattle_BG3_X
 	thumb_func_end sub_80E1934
 
 	thumb_func_start sub_80E1A2C
@@ -1719,10 +1719,10 @@ _080E1BE2:
 	movs r0, 0xFF
 	ands r1, r0
 	strh r1, [r4, 0xC]
-	ldr r2, _080E1C50 @ =gUnknown_030041B0
+	ldr r2, _080E1C50 @ =gBattle_BG3_X
 	ldrh r0, [r4, 0xA]
 	strh r0, [r2]
-	ldr r0, _080E1C54 @ =gUnknown_030041B8
+	ldr r0, _080E1C54 @ =gBattle_BG3_Y
 	strh r1, [r0]
 	ldrh r0, [r6, 0x4]
 	strh r0, [r4, 0xE]
@@ -1736,8 +1736,8 @@ _080E1C40: .4byte gAnimBankAttacker
 _080E1C44: .4byte sub_80E1C58
 _080E1C48: .4byte gTasks
 _080E1C4C: .4byte 0x000001ff
-_080E1C50: .4byte gUnknown_030041B0
-_080E1C54: .4byte gUnknown_030041B8
+_080E1C50: .4byte gBattle_BG3_X
+_080E1C54: .4byte gBattle_BG3_Y
 	thumb_func_end sub_80E1BB0
 
 	thumb_func_start sub_80E1C58
@@ -1757,10 +1757,10 @@ sub_80E1C58: @ 80E1C58
 	ldrsh r0, [r2, r4]
 	cmp r1, r0
 	bne _080E1C98
-	ldr r0, _080E1C90 @ =gUnknown_030041B0
+	ldr r0, _080E1C90 @ =gBattle_BG3_X
 	movs r1, 0
 	strh r1, [r0]
-	ldr r0, _080E1C94 @ =gUnknown_030041B8
+	ldr r0, _080E1C94 @ =gBattle_BG3_Y
 	strh r1, [r0]
 	adds r0, r3, 0
 	bl DestroyTask
@@ -1768,13 +1768,13 @@ sub_80E1C58: @ 80E1C58
 	.align 2, 0
 _080E1C88: .4byte gTasks
 _080E1C8C: .4byte gBattleAnimArgs
-_080E1C90: .4byte gUnknown_030041B0
-_080E1C94: .4byte gUnknown_030041B8
+_080E1C90: .4byte gBattle_BG3_X
+_080E1C94: .4byte gBattle_BG3_Y
 _080E1C98:
-	ldr r1, _080E1CAC @ =gUnknown_030041B0
+	ldr r1, _080E1CAC @ =gBattle_BG3_X
 	ldrh r0, [r2, 0xA]
 	strh r0, [r1]
-	ldr r1, _080E1CB0 @ =gUnknown_030041B8
+	ldr r1, _080E1CB0 @ =gBattle_BG3_Y
 	ldrh r0, [r2, 0xC]
 	strh r0, [r1]
 _080E1CA4:
@@ -1782,8 +1782,8 @@ _080E1CA4:
 	pop {r0}
 	bx r0
 	.align 2, 0
-_080E1CAC: .4byte gUnknown_030041B0
-_080E1CB0: .4byte gUnknown_030041B8
+_080E1CAC: .4byte gBattle_BG3_X
+_080E1CB0: .4byte gBattle_BG3_Y
 	thumb_func_end sub_80E1C58
 	
 	.align 2, 0 @ Don't pad with nop.

@@ -3,6 +3,7 @@
 #include "battle_anim.h"
 #include "battle_interface.h"
 #include "blend_palette.h"
+#include "contest.h"
 #include "data2.h"
 #include "decompress.h"
 #include "main.h"
@@ -25,7 +26,7 @@ extern u8 gActiveBank;
 extern u8 gNoOfAllBanks;
 extern u16 gBattlePartyID[];
 extern u8 gBanksBySide[];
-extern u8 gObjectBankIDs[];
+extern u8 gBankSpriteIds[];
 extern u16 gUnknown_02024DE8;
 extern u8 gDoingBattleAnim;
 extern u32 gTransformedPersonalities[];
@@ -168,9 +169,9 @@ bool8 move_anim_start_t3(u8 a, u8 b, u8 c, u8 d, u16 e)
     }
     if (ewram17800[a].substituteSprite && sub_803163C(d) == 0)
         return TRUE;
-    if (ewram17800[a].substituteSprite && d == 2 && gSprites[gObjectBankIDs[a]].invisible)
+    if (ewram17800[a].substituteSprite && d == 2 && gSprites[gBankSpriteIds[a]].invisible)
     {
-        refresh_graphics_maybe(a, 1, gObjectBankIDs[a]);
+        refresh_graphics_maybe(a, 1, gBankSpriteIds[a]);
         sub_80324E0(a);
         return TRUE;
     }
@@ -591,12 +592,12 @@ void sub_8031F24(void)
     s32 i;
 
     for (i = 0; i < gNoOfAllBanks; i++)
-        ewram17800[i].invisible = gSprites[gObjectBankIDs[i]].invisible;
+        ewram17800[i].invisible = gSprites[gBankSpriteIds[i]].invisible;
 }
 
 void sub_8031F88(u8 a)
 {
-    ewram17800[a].invisible = gSprites[gObjectBankIDs[a]].invisible;
+    ewram17800[a].invisible = gSprites[gBankSpriteIds[a]].invisible;
 }
 
 void sub_8031FC4(u8 a, u8 b, bool8 c)
@@ -610,7 +611,7 @@ void sub_8031FC4(u8 a, u8 b, bool8 c)
 
     if (c)
     {
-        StartSpriteAnim(&gSprites[gObjectBankIDs[a]], ewram17840.unk0);
+        StartSpriteAnim(&gSprites[gBankSpriteIds[a]], ewram17840.unk0);
         paletteOffset = 0x100 + a * 16;
         LoadPalette(ewram16400 + ewram17840.unk0 * 32, paletteOffset, 32);
         gBattleMonForms[a] = ewram17840.unk0;
@@ -619,19 +620,16 @@ void sub_8031FC4(u8 a, u8 b, bool8 c)
             BlendPalette(paletteOffset, 16, 6, 0x7FFF);
             CpuCopy32(gPlttBufferFaded + paletteOffset, gPlttBufferUnfaded + paletteOffset, 32);
         }
-        gSprites[gObjectBankIDs[a]].pos1.y = sub_8077F68(a);
+        gSprites[gBankSpriteIds[a]].pos1.y = sub_8077F68(a);
     }
     else
     {
-        const void *src;
-        void *dst;
-
         if (IsContest())
         {
             r10 = 0;
-            species = ewram19348.unk2;
-            personalityValue = ewram19348.unk8;
-            otId = ewram19348.unkC;
+            species = shared19348.unk2;
+            personalityValue = shared19348.unk8;
+            otId = shared19348.unkC;
             HandleLoadSpecialPokePic(
               &gMonBackPicTable[species],
               gMonBackPicCoords[species].coords,
@@ -639,7 +637,7 @@ void sub_8031FC4(u8 a, u8 b, bool8 c)
               eVoidSharedArr2,
               gUnknown_081FAF4C[0],
               species,
-              ewram19348.unk10);
+              shared19348.unk10);
         }
         else
         {
@@ -675,9 +673,7 @@ void sub_8031FC4(u8 a, u8 b, bool8 c)
                   gTransformedPersonalities[a]);
             }
         }
-        src = gUnknown_081FAF4C[r10];
-        dst = (void *)(VRAM + 0x10000 + gSprites[gObjectBankIDs[a]].oam.tileNum * 32);
-        DmaCopy32(3, src, dst, 0x800);
+        DmaCopy32Defvars(3, gUnknown_081FAF4C[r10], (void *)(VRAM + 0x10000 + gSprites[gBankSpriteIds[a]].oam.tileNum * 32), 0x800);
         paletteOffset = 0x100 + a * 16;
         lzPaletteData = GetMonSpritePalFromOtIdPersonality(species, otId, personalityValue);
         LZDecompressWram(lzPaletteData, gSharedMem);
@@ -696,8 +692,8 @@ void sub_8031FC4(u8 a, u8 b, bool8 c)
             ewram17800[a].transformedSpecies = species;
             gBattleMonForms[a] = gBattleMonForms[b];
         }
-        gSprites[gObjectBankIDs[a]].pos1.y = sub_8077F68(a);
-        StartSpriteAnim(&gSprites[gObjectBankIDs[a]], gBattleMonForms[a]);
+        gSprites[gBankSpriteIds[a]].pos1.y = sub_8077F68(a);
+        StartSpriteAnim(&gSprites[gBankSpriteIds[a]], gBattleMonForms[a]);
     }
 }
 
@@ -762,7 +758,7 @@ void sub_80324E0(u8 a)
     ewram17800[a].substituteSprite = 0;
 }
 
-void sub_80324F8(struct Pokemon *pkmn, u8 b)
+void HandleLowHpMusicChange(struct Pokemon *pkmn, u8 b)
 {
     u16 hp = GetMonData(pkmn, MON_DATA_HP);
     u16 maxHP = GetMonData(pkmn, MON_DATA_MAX_HP);
@@ -792,9 +788,9 @@ void sub_80324F8(struct Pokemon *pkmn, u8 b)
     }
 }
 
-void BattleMusicStop(void)
+void BattleStopLowHpSound(void)
 {
-    u8 r4 = GetBankByPlayerAI(0);
+    u8 r4 = GetBankByIdentity(0);
 
     ewram17800[r4].unk0_1 = 0;
     if (IsDoubleBattle())
@@ -814,17 +810,17 @@ void sub_8032638(void)
 {
     if (gMain.inBattle)
     {
-        u8 r8 = GetBankByPlayerAI(0);
-        u8 r9 = GetBankByPlayerAI(2);
+        u8 r8 = GetBankByIdentity(0);
+        u8 r9 = GetBankByIdentity(2);
         u8 r4 = pokemon_order_func(gBattlePartyID[r8]);
         u8 r5 = pokemon_order_func(gBattlePartyID[r9]);
 
         if (GetMonData(&gPlayerParty[r4], MON_DATA_HP) != 0)
-            sub_80324F8(&gPlayerParty[r4], r8);
+            HandleLowHpMusicChange(&gPlayerParty[r4], r8);
         if (IsDoubleBattle())
         {
             if (GetMonData(&gPlayerParty[r5], MON_DATA_HP) != 0)
-                sub_80324F8(&gPlayerParty[r5], r9);
+                HandleLowHpMusicChange(&gPlayerParty[r5], r9);
         }
     }
 }
@@ -837,15 +833,15 @@ void sub_80326EC(u8 a)
     {
         if (IsBankSpritePresent(i) != 0)
         {
-            gSprites[gObjectBankIDs[i]].oam.affineMode = a;
+            gSprites[gBankSpriteIds[i]].oam.affineMode = a;
             if (a == 0)
             {
-                ewram17810[i].unk6 = gSprites[gObjectBankIDs[i]].oam.matrixNum;
-                gSprites[gObjectBankIDs[i]].oam.matrixNum = 0;
+                ewram17810[i].unk6 = gSprites[gBankSpriteIds[i]].oam.matrixNum;
+                gSprites[gBankSpriteIds[i]].oam.matrixNum = 0;
             }
             else
             {
-                gSprites[gObjectBankIDs[i]].oam.matrixNum = ewram17810[i].unk6;
+                gSprites[gBankSpriteIds[i]].oam.matrixNum = ewram17810[i].unk6;
             }
         }
     }
@@ -856,12 +852,12 @@ void sub_80327CC(void)
     u8 r5;
 
     LoadCompressedObjectPic(&gUnknown_081FAF24);
-    r5 = GetBankByPlayerAI(1);
+    r5 = GetBankByIdentity(1);
     ewram17810[r5].unk7 = CreateSprite(&gSpriteTemplate_81FAF34, GetBankPosition(r5, 0), GetBankPosition(r5, 1) + 32, 0xC8);
     gSprites[ewram17810[r5].unk7].data[0] = r5;
     if (IsDoubleBattle())
     {
-        r5 = GetBankByPlayerAI(3);
+        r5 = GetBankByIdentity(3);
         ewram17810[r5].unk7 = CreateSprite(&gSpriteTemplate_81FAF34, GetBankPosition(r5, 0), GetBankPosition(r5, 1) + 32, 0xC8);
         gSprites[ewram17810[r5].unk7].data[0] = r5;
     }
@@ -871,7 +867,7 @@ void sub_80328A4(struct Sprite *sprite)
 {
     bool8 invisible = FALSE;
     u8 r4 = sprite->data[0];
-    struct Sprite *r7 = &gSprites[gObjectBankIDs[r4]];
+    struct Sprite *r7 = &gSprites[gBankSpriteIds[r4]];
 
     if (!r7->inUse || IsBankSpritePresent(r4) == 0)
     {

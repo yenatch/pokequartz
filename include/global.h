@@ -1,11 +1,11 @@
 #ifndef GUARD_GLOBAL_H
 #define GUARD_GLOBAL_H
 
+#include "config.h" // we need to define config before gba headers as print stuff needs the functions nulled before defines.
 #include "gba/gba.h"
-#include "config.h"
 
 // IDE support
-#ifdef __APPLE__
+#if defined(__APPLE__) || defined(__CYGWIN__)
 #define _(x) x
 #define __(x) x
 #define INCBIN_U8 {0}
@@ -14,9 +14,9 @@
 #define INCBIN_S8 {0}
 #define INCBIN_S16 {0}
 #define INCBIN_S32 {0}
-void *     memcpy (void *, const void *, size_t);
-void *     memset (void *, int, size_t);
-int     strcmp (const char *, const char *);
+void *memcpy (void *, const void *, size_t);
+void *memset (void *, int, size_t);
+int strcmp (const char *, const char *);
 #endif
 
 // Prevent cross-jump optimization.
@@ -27,21 +27,13 @@ int     strcmp (const char *, const char *);
 
 #define asm_unified(x) asm(".syntax unified\n" x "\n.syntax divided\n")
 
-#define nonmatching(fndec, x) {\
-__attribute__((naked))\
-fndec\
-{\
-    asm_unified(x);\
-}\
-}
-
 #define ARRAY_COUNT(array) (sizeof(array) / sizeof((array)[0]))
 
 #define POKEMON_SLOTS_NUMBER 412
 #define POKEMON_NAME_LENGTH 10
 #define OT_NAME_LENGTH 7
 
-#define min(a, b) ((a) <= (b) ? (a) : (b))
+#define min(a, b) ((a) < (b) ? (a) : (b))
 #define max(a, b) ((a) >= (b) ? (a) : (b))
 
 // why does GF hate 2d arrays
@@ -72,6 +64,15 @@ enum
 #define T2_READ_16(ptr) ((ptr)[0] + ((ptr)[1] << 8))
 #define T2_READ_32(ptr) ((ptr)[0] + ((ptr)[1] << 8) + ((ptr)[2] << 16) + ((ptr)[3] << 24))
 #define T2_READ_PTR(ptr) (void*) T2_READ_32(ptr)
+
+// Credits to Made (dolphin emoji)
+#define S16TOPOSFLOAT(val)   \
+({                           \
+    s16 v = (val);           \
+    float f = (float)v;      \
+    if(v < 0) f += 65536.0f; \
+    f;                       \
+})
 
 enum
 {
@@ -690,7 +691,7 @@ struct SaveBlock1 /* 0x02025734 */
         /*0x2B40*/ u16 unk2B40[6];
     } easyChats;
     /*0x2B4C*/ struct MailStruct mail[16];
-    /*0x2D8C*/ u8 unk2D8C[4];
+    /*0x2D8C*/ u8 unk2D8C[4];  // What is this? Apparently it's supposed to be 64 bytes in size.
     /*0x2D90*/ u8 filler_2D90[0x4];
     /*0x2D94*/ union MauvilleMan mauvilleMan;
     /*0x2DD4*/ struct EasyChatPair easyChatPairs[5]; //Dewford trend [0] and some other stuff
@@ -733,46 +734,37 @@ struct Pokedex
 
 struct BattleTowerTrainer
 {
-    u8 trainerClass;
-    u8 name[8];
-    u8 teamFlags;
-    struct {
-        u16 easyChat[6];
-    } greeting;
+    /*0x00*/ u8 trainerClass;
+    /*0x01*/ u8 name[8];
+    /*0x09*/ u8 teamFlags;
+             u8 filler0A[2];
+    /*0x0C*/ u16 greeting[6];
 };
 
 struct BattleTowerRecord // record mixing
 {
-    /*0x00*/u8 battleTowerLevelType; // 0 = level 50, 1 = level 100
-    /*0x01*/u8 trainerClass;
-    /*0x02*/u16 winStreak;
-    /*0x04*/u8 name[8];
-    /*0x0C*/u8 trainerId[4];
-    /*0x10*/struct {
-        u16 easyChat[6];
-    } greeting;
-    /*0x1C*/struct UnknownPokemonStruct party[3];
-    /*0xA0*/u32 checksum;
+    /*0x00*/ u8 battleTowerLevelType; // 0 = level 50, 1 = level 100
+    /*0x01*/ u8 trainerClass;
+    /*0x02*/ u16 winStreak;
+    /*0x04*/ u8 name[8];
+    /*0x0C*/ u8 trainerId[4];
+    /*0x10*/ u16 greeting[6];
+    /*0x1C*/ struct UnknownPokemonStruct party[3];
+    /*0xA0*/ u32 checksum;
 };
 
 struct BattleTowerEReaderTrainer
 {
-    /*0x00*/u8 unk0;
-    /*0x01*/u8 trainerClass;
-    /*0x02*/u16 winStreak;
-    /*0x04*/u8 name[8];
-    /*0x0C*/u8 trainerId[4];
-    /*0x10*/struct {
-        u16 easyChat[6];
-    } greeting;
-    /*0x1C*/struct {
-        u16 easyChat[6];
-    } farewellPlayerLost;
-    /*0x28*/struct {
-        u16 easyChat[6];
-    } farewellPlayerWon;
-    /*0x34*/struct UnknownPokemonStruct party[3];
-    /*0xB8*/u32 checksum;
+    /*0x00*/ u8 unk0;
+    /*0x01*/ u8 trainerClass;
+    /*0x02*/ u16 winStreak;
+    /*0x04*/ u8 name[8];
+    /*0x0C*/ u8 trainerId[4];
+    /*0x10*/ u16 greeting[6];
+    /*0x1C*/ u16 farewellPlayerLost[6];
+    /*0x28*/ u16 farewellPlayerWon[6];
+    /*0x34*/ struct UnknownPokemonStruct party[3];
+    /*0xB8*/ u32 checksum;
 };
 
 struct BattleTowerData
@@ -830,7 +822,7 @@ struct MapPosition
 {
     s16 x;
     s16 y;
-    u8 height;
+    s8 height;
 };
 
 struct UnkStruct_8054FF8
@@ -849,7 +841,6 @@ struct HallOfFame
     u8 filler[0x1F00];
 };
 
-extern struct HallOfFame gHallOfFame;
 extern struct SaveBlock2 gSaveBlock2;
 
 #endif // GUARD_GLOBAL_H

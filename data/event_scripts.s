@@ -54,6 +54,8 @@ gStdScripts::
 	.4byte Std_ObtainDecoration
 gStdScripts_End::
 
+	.include "data/quartz_maps.inc"
+
 	.include "data/scripts/maps/PetalburgCity.inc"
 	.include "data/scripts/maps/SlateportCity.inc"
 	.include "data/scripts/maps/MauvilleCity.inc"

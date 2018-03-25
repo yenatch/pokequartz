@@ -2577,7 +2577,7 @@ UnknownMapBlockdata_082E55C8:
 	.incbin "data/maps/UnknownMap_082E55C8/map.bin"
 	
 	.align 2
-UnknownMapAttributes_082E55C8:
+UnknownMapAttributes_082E55C8::
 	.4byte 0x1
 	.4byte 0x1
 	.4byte UnknownMapBorder_082E55C8
@@ -2592,7 +2592,7 @@ UnknownMapBlockdata_082E55EC:
 	.incbin "data/maps/UnknownMap_082E55EC/map.bin"
 	
 	.align 2
-UnknownMapAttributes_082E55EC:
+UnknownMapAttributes_082E55EC::
 	.4byte 0x1
 	.4byte 0x1
 	.4byte UnknownMapBorder_082E55EC
@@ -2607,7 +2607,7 @@ UnknownMapBlockdata_082E5610:
 	.incbin "data/maps/UnknownMap_082E5610/map.bin"
 	
 	.align 2
-UnknownMapAttributes_082E5610:
+UnknownMapAttributes_082E5610::
 	.4byte 0x1
 	.4byte 0x1
 	.4byte UnknownMapBorder_082E5610
@@ -2622,7 +2622,7 @@ UnknownMapBlockdata_082E5634:
 	.incbin "data/maps/UnknownMap_082E5634/map.bin"
 	
 	.align 2
-UnknownMapAttributes_082E5634:
+UnknownMapAttributes_082E5634::
 	.4byte 0x1
 	.4byte 0x1
 	.4byte UnknownMapBorder_082E5634
@@ -2637,7 +2637,7 @@ UnknownMapBlockdata_082E5658:
 	.incbin "data/maps/UnknownMap_082E5658/map.bin"
 	
 	.align 2
-UnknownMapAttributes_082E5658:
+UnknownMapAttributes_082E5658::
 	.4byte 0x1
 	.4byte 0x1
 	.4byte UnknownMapBorder_082E5658
@@ -2652,7 +2652,7 @@ UnknownMapBlockdata_082E567C:
 	.incbin "data/maps/UnknownMap_082E567C/map.bin"
 	
 	.align 2
-UnknownMapAttributes_082E567C:
+UnknownMapAttributes_082E567C::
 	.4byte 0x1
 	.4byte 0x1
 	.4byte UnknownMapBorder_082E567C
@@ -2667,7 +2667,7 @@ UnknownMapBlockdata_082E56A0:
 	.incbin "data/maps/UnknownMap_082E56A0/map.bin"
 	
 	.align 2
-UnknownMapAttributes_082E56A0:
+UnknownMapAttributes_082E56A0::
 	.4byte 0x1
 	.4byte 0x1
 	.4byte UnknownMapBorder_082E56A0
@@ -2682,7 +2682,7 @@ UnknownMapBlockdata_082E56C4:
 	.incbin "data/maps/UnknownMap_082E56C4/map.bin"
 	
 	.align 2
-UnknownMapAttributes_082E56C4:
+UnknownMapAttributes_082E56C4::
 	.4byte 0x1
 	.4byte 0x1
 	.4byte UnknownMapBorder_082E56C4
@@ -2697,7 +2697,7 @@ UnknownMapBlockdata_082E56E8:
 	.incbin "data/maps/UnknownMap_082E56E8/map.bin"
 	
 	.align 2
-UnknownMapAttributes_082E56E8:
+UnknownMapAttributes_082E56E8::
 	.4byte 0x1
 	.4byte 0x1
 	.4byte UnknownMapBorder_082E56E8
@@ -2712,7 +2712,7 @@ UnknownMapBlockdata_082E570C:
 	.incbin "data/maps/UnknownMap_082E570C/map.bin"
 	
 	.align 2
-UnknownMapAttributes_082E570C:
+UnknownMapAttributes_082E570C::
 	.4byte 0x1
 	.4byte 0x1
 	.4byte UnknownMapBorder_082E570C
@@ -2727,7 +2727,7 @@ UnknownMapBlockdata_082E5730:
 	.incbin "data/maps/UnknownMap_082E5730/map.bin"
 	
 	.align 2
-UnknownMapAttributes_082E5730:
+UnknownMapAttributes_082E5730::
 	.4byte 0x1
 	.4byte 0x1
 	.4byte UnknownMapBorder_082E5730
@@ -2742,7 +2742,7 @@ UnknownMapBlockdata_082E5754:
 	.incbin "data/maps/UnknownMap_082E5754/map.bin"
 	
 	.align 2
-UnknownMapAttributes_082E5754:
+UnknownMapAttributes_082E5754::
 	.4byte 0x1
 	.4byte 0x1
 	.4byte UnknownMapBorder_082E5754
@@ -2757,7 +2757,7 @@ UnknownMapBlockdata_082E5778:
 	.incbin "data/maps/UnknownMap_082E5778/map.bin"
 	
 	.align 2
-UnknownMapAttributes_082E5778:
+UnknownMapAttributes_082E5778::
 	.4byte 0x1
 	.4byte 0x1
 	.4byte UnknownMapBorder_082E5778
@@ -2772,7 +2772,7 @@ UnknownMapBlockdata_082E579C:
 	.incbin "data/maps/UnknownMap_082E579C/map.bin"
 	
 	.align 2
-UnknownMapAttributes_082E579C:
+UnknownMapAttributes_082E579C::
 	.4byte 0x1
 	.4byte 0x1
 	.4byte UnknownMapBorder_082E579C
@@ -3657,7 +3657,7 @@ UnknownMapBlockdata_082EDF30:
 	.incbin "data/maps/UnknownMap_082EDF30/map.bin"
 
 	.align 2
-UnknownMapAttributes_082EDF30:
+UnknownMapAttributes_082EDF30::
 	.4byte 0x3A
 	.4byte 0x1A
 	.4byte UnknownMapBorder_082EDF30
@@ -4712,7 +4712,7 @@ UnknownMapBlockdata_082FF894:
 	.incbin "data/maps/UnknownMap_082FF894/map.bin"
 	
 	.align 2
-UnknownMapAttributes_082FF894:
+UnknownMapAttributes_082FF894::
 	.4byte 0x13
 	.4byte 0x13
 	.4byte UnknownMapBorder_082FF894
@@ -4817,7 +4817,7 @@ UnknownMapBlockdata_08302970:
 	.incbin "data/maps/UnknownMap_08302970/map.bin"
 	
 	.align 2
-UnknownMapAttributes_08302970:
+UnknownMapAttributes_08302970::
 	.4byte 0x3C
 	.4byte 0x28
 	.4byte UnknownMapBorder_08302970
@@ -4922,7 +4922,7 @@ UnknownMapBlockdata_083041B4:
 	.incbin "data/maps/UnknownMap_083041B4/map.bin"
 	
 	.align 2
-UnknownMapAttributes_083041B4:
+UnknownMapAttributes_083041B4::
 	.4byte 0x1B
 	.4byte 0x2E
 	.4byte UnknownMapBorder_083041B4

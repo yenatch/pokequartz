@@ -495,7 +495,7 @@ gMapGroup33:: @ 8308584
 	.4byte Route124_DivingTreasureHuntersHouse
 
 	.align 2
-gMapGroups:: @ 8308588
+@gMapGroups:: @ 8308588
 	.4byte gMapGroup0
 	.4byte gMapGroup1
 	.4byte gMapGroup2

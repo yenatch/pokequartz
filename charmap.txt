@@ -48,7 +48,9 @@ LV          = 34
 '¿'         = 51
 '¡'         = 52
 PK          = 53
+MN          = 54
 PKMN        = 53 54
+PO          = 55
 POKEBLOCK   = 55 56 57 58 59
 'Í'         = 5A
 '%'         = 5B
@@ -78,6 +80,7 @@ SUPER_RE    = A0
 '?'         = AC
 '.'         = AD
 '-'         = AE
+'|'         = AF
 '…'         = B0
 '“'         = B1
 '”'         = B2
@@ -383,6 +386,10 @@ JPN = FC 15
 ENG = FC 16
 PAUSE_MUSIC = FC 17
 RESUME_MUSIC = FC 18
+
+@ XXX
+ENLARGE = FC 21
+SET_TO_DEFAULT_SIZE = FC 22
 
 @ colors
 

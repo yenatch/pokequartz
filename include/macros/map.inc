@@ -24,6 +24,20 @@
 	inc _num_npcs
 	.endm
 
+	.macro object_event_2 index, gfx, replacement, x, y, elevation, movement_type, radius, filler2, trainer_type, sight_radius_tree_etc, script, event_flag, filler3, filler4
+	.byte \index
+	.2byte \gfx
+	.byte \replacement
+	.2byte \x
+	.2byte \y
+	.byte \elevation, \movement_type, \radius, \filler2
+	.2byte \trainer_type, \sight_radius_tree_etc
+	.4byte \script
+	.2byte \event_flag
+	.byte \filler3, \filler4
+	inc _num_npcs
+	.endm
+
 	.macro warp_def x, y, byte, warp, map_id
 	.2byte \x, \y
 	.byte \byte, \warp

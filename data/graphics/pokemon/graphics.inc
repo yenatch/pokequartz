@@ -1439,22 +1439,22 @@ gMonFootprint_Crabix::
 	.incbin "graphics/pokemon/crabix/footprint.1bpp"
 
 gMonFrontPic_Dzoibix::
-	.incbin "graphics/pokemon/dzoïbix/front.4bpp.lz"
+	.incbin "graphics/pokemon/dzoibix/front.4bpp.lz"
 
 gMonPalette_Dzoibix::
-	.incbin "graphics/pokemon/dzoïbix/normal.gbapal.lz"
+	.incbin "graphics/pokemon/dzoibix/normal.gbapal.lz"
 
 gMonBackPic_Dzoibix::
-	.incbin "graphics/pokemon/dzoïbix/back.4bpp.lz"
+	.incbin "graphics/pokemon/dzoibix/back.4bpp.lz"
 
 gMonShinyPalette_Dzoibix::
-	.incbin "graphics/pokemon/dzoïbix/shiny.gbapal.lz"
+	.incbin "graphics/pokemon/dzoibix/shiny.gbapal.lz"
 
 gMonIcon_Dzoibix::
-	.incbin "graphics/pokemon/dzoïbix/icon.4bpp"
+	.incbin "graphics/pokemon/dzoibix/icon.4bpp"
 
 gMonFootprint_Dzoibix::
-	.incbin "graphics/pokemon/dzoïbix/footprint.1bpp"
+	.incbin "graphics/pokemon/dzoibix/footprint.1bpp"
 
 gMonFrontPic_Spingen::
 	.incbin "graphics/pokemon/spingen/front.4bpp.lz"
@@ -2087,22 +2087,22 @@ gMonFootprint_Bankedon::
 	.incbin "graphics/pokemon/bankedon/footprint.1bpp"
 
 gMonFrontPic_Plures::
-	.incbin "graphics/pokemon/plurés/front.4bpp.lz"
+	.incbin "graphics/pokemon/plures/front.4bpp.lz"
 
 gMonPalette_Plures::
-	.incbin "graphics/pokemon/plurés/normal.gbapal.lz"
+	.incbin "graphics/pokemon/plures/normal.gbapal.lz"
 
 gMonBackPic_Plures::
-	.incbin "graphics/pokemon/plurés/back.4bpp.lz"
+	.incbin "graphics/pokemon/plures/back.4bpp.lz"
 
 gMonShinyPalette_Plures::
-	.incbin "graphics/pokemon/plurés/shiny.gbapal.lz"
+	.incbin "graphics/pokemon/plures/shiny.gbapal.lz"
 
 gMonIcon_Plures::
-	.incbin "graphics/pokemon/plurés/icon.4bpp"
+	.incbin "graphics/pokemon/plures/icon.4bpp"
 
 gMonFootprint_Plures::
-	.incbin "graphics/pokemon/plurés/footprint.1bpp"
+	.incbin "graphics/pokemon/plures/footprint.1bpp"
 
 gMonFrontPic_Dracoon::
 	.incbin "graphics/pokemon/dracoon/front.4bpp.lz"
@@ -2861,22 +2861,22 @@ gMonFootprint_Shelldan::
 	.incbin "graphics/pokemon/shelldan/footprint.1bpp"
 
 gMonFrontPic_Licka::
-	.incbin "graphics/pokemon/lickä/front.4bpp.lz"
+	.incbin "graphics/pokemon/licka/front.4bpp.lz"
 
 gMonPalette_Licka::
-	.incbin "graphics/pokemon/lickä/normal.gbapal.lz"
+	.incbin "graphics/pokemon/licka/normal.gbapal.lz"
 
 gMonBackPic_Licka::
-	.incbin "graphics/pokemon/lickä/back.4bpp.lz"
+	.incbin "graphics/pokemon/licka/back.4bpp.lz"
 
 gMonShinyPalette_Licka::
-	.incbin "graphics/pokemon/lickä/shiny.gbapal.lz"
+	.incbin "graphics/pokemon/licka/shiny.gbapal.lz"
 
 gMonIcon_Licka::
-	.incbin "graphics/pokemon/lickä/icon.4bpp"
+	.incbin "graphics/pokemon/licka/icon.4bpp"
 
 gMonFootprint_Licka::
-	.incbin "graphics/pokemon/lickä/footprint.1bpp"
+	.incbin "graphics/pokemon/licka/footprint.1bpp"
 
 gMonFrontPic_Tongrito::
 	.incbin "graphics/pokemon/tongrito/front.4bpp.lz"
@@ -6497,22 +6497,22 @@ gMonFootprint_Boguon::
 	.incbin "graphics/pokemon/boguon/footprint.1bpp"
 
 gMonFrontPic_Guinette::
-	.incbin "graphics/pokemon/guiñette/front.4bpp.lz"
+	.incbin "graphics/pokemon/guinette/front.4bpp.lz"
 
 gMonPalette_Guinette::
-	.incbin "graphics/pokemon/guiñette/normal.gbapal.lz"
+	.incbin "graphics/pokemon/guinette/normal.gbapal.lz"
 
 gMonBackPic_Guinette::
-	.incbin "graphics/pokemon/guiñette/back.4bpp.lz"
+	.incbin "graphics/pokemon/guinette/back.4bpp.lz"
 
 gMonShinyPalette_Guinette::
-	.incbin "graphics/pokemon/guiñette/shiny.gbapal.lz"
+	.incbin "graphics/pokemon/guinette/shiny.gbapal.lz"
 
 gMonIcon_Guinette::
-	.incbin "graphics/pokemon/guiñette/icon.4bpp"
+	.incbin "graphics/pokemon/guinette/icon.4bpp"
 
 gMonFootprint_Guinette::
-	.incbin "graphics/pokemon/guiñette/footprint.1bpp"
+	.incbin "graphics/pokemon/guinette/footprint.1bpp"
 
 gMonFrontPic_Woopet::
 	.incbin "graphics/pokemon/woopet/front.4bpp.lz"
@@ -6587,22 +6587,22 @@ gMonFootprint_Leirao::
 	.incbin "graphics/pokemon/leirao/footprint.1bpp"
 
 gMonFrontPic_Dorliron::
-	.incbin "graphics/pokemon/dorlirón/front.4bpp.lz"
+	.incbin "graphics/pokemon/dorliron/front.4bpp.lz"
 
 gMonPalette_Dorliron::
-	.incbin "graphics/pokemon/dorlirón/normal.gbapal.lz"
+	.incbin "graphics/pokemon/dorliron/normal.gbapal.lz"
 
 gMonBackPic_Dorliron::
-	.incbin "graphics/pokemon/dorlirón/back.4bpp.lz"
+	.incbin "graphics/pokemon/dorliron/back.4bpp.lz"
 
 gMonShinyPalette_Dorliron::
-	.incbin "graphics/pokemon/dorlirón/shiny.gbapal.lz"
+	.incbin "graphics/pokemon/dorliron/shiny.gbapal.lz"
 
 gMonIcon_Dorliron::
-	.incbin "graphics/pokemon/dorlirón/icon.4bpp"
+	.incbin "graphics/pokemon/dorliron/icon.4bpp"
 
 gMonFootprint_Dorliron::
-	.incbin "graphics/pokemon/dorlirón/footprint.1bpp"
+	.incbin "graphics/pokemon/dorliron/footprint.1bpp"
 
 gMonFrontPic_Simpleon::
 	.incbin "graphics/pokemon/simpleon/front.4bpp.lz"
@@ -7127,22 +7127,22 @@ gMonFootprint_Dristal::
 	.incbin "graphics/pokemon/dristal/footprint.1bpp"
 
 gMonFrontPic_Feegon::
-	.incbin "graphics/pokemon/feégon/front.4bpp.lz"
+	.incbin "graphics/pokemon/feegon/front.4bpp.lz"
 
 gMonPalette_Feegon::
-	.incbin "graphics/pokemon/feégon/normal.gbapal.lz"
+	.incbin "graphics/pokemon/feegon/normal.gbapal.lz"
 
 gMonBackPic_Feegon::
-	.incbin "graphics/pokemon/feégon/back.4bpp.lz"
+	.incbin "graphics/pokemon/feegon/back.4bpp.lz"
 
 gMonShinyPalette_Feegon::
-	.incbin "graphics/pokemon/feégon/shiny.gbapal.lz"
+	.incbin "graphics/pokemon/feegon/shiny.gbapal.lz"
 
 gMonIcon_Feegon::
-	.incbin "graphics/pokemon/feégon/icon.4bpp"
+	.incbin "graphics/pokemon/feegon/icon.4bpp"
 
 gMonFootprint_Feegon::
-	.incbin "graphics/pokemon/feégon/footprint.1bpp"
+	.incbin "graphics/pokemon/feegon/footprint.1bpp"
 
 gMonFrontPic_Drahago::
 	.incbin "graphics/pokemon/drahago/front.4bpp.lz"
